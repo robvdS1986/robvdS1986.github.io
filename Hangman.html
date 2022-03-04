@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <!--list of possible things to use-->
+    <!--Use variable and index number to select a word from an array-->
+
+    <!-- Background color of entire game and the canvas. Also size and position of canvas for hanging Danny-->
+    <!-- and position buttons-->
+    <style>
+      body {
+        background-color: cadetblue;
+      }
+
+      #goed {
+        padding: 80px;
+        font-size: 50px;
+      }
+
+      #foutlives {
+        margin: 0 auto;
+        width: 250px;
+        display: flex;
+        align-items: flex-start;
+      }
+
+      #foutlives div {
+        flex: 1;
+        height: 120px;
+        word-break: break-all;
+      }
+
+      #fout {
+        background-color: white;
+        border: black solid 1px;
+
+        margin-bottom: 30px;
+        margin-right: 20px;
+      }
+
+      #lives {
+        background-color: white;
+        border: black solid 1px;
+        width: 70px;
+      }
+
+      .wrapper {
+        width: 100%;
+        text-align: center;
+      }
+      canvas {
+        width: 300px;
+        height: 300px;
+        color: white;
+        border: black solid 1px;
+
+        background-color: white;
+        padding: 15px;
+      }
+
+      button {
+        font-size: 2em;
+      }
+
+      button:hover {
+        background-color: orange;
+      }
+
+      button:focus {
+        background-color: red;
+      }
+
+      #posButtons {
+        display: inline-block;
+
+        text-align: center;
+        width: 600px;
+      }
+
+      #changeword {
+        margin: 40px -17px;
+        text-align: center;
+        width: 600px;
+      }
+    </style>
+
+    <!-- arrays for the alphabet, the categories and the words-->
+    <dialog id="ifLost">
+      <h1>YOU HAVE LOST!!!</h1>
+      <a href="https://robvds1986.github.io/">reset</a> 
+    </dialog>
+
+
+    <div class="wrapper">
+      <div id="goed"></div>
+      <canvas id="hangdanny"> </canvas><br /><br />
+      <div id="foutlives">
+        <div id="fout">
+          <p>verkeerde letters:</p>
+          <p id="vLetter"></p>
+        </div>
+        <div>
+          <p id="lives"></p>
+        </div>
+      </div>
+      <div id="posButtons" onclick="clickedLetter(event)">
+        <!--creat loop that draws lines for every letter of the word that has to be guessed-->
+        <!-- <script>
+      const element = document.getElementById("goed");
+      console.log(element);
+      const para = document.createElement("ul");
+      const node = document.createTextNode("_");
+      para.appendChild(node);
+      element.appendChild(para);
+    </script> -->
+        <!-- div to put the lines and letters in with a loop-->
+
+        <!-- hier komt de hangman als men foute letters kiest -->
+
+        <!-- Buttons to input the players guesses-->
+        <!-- Inside a div-->
+
+        <button id="letterA">A</button>
+        <button id="letterB">B</button>
+        <button id="letterC">C</button>
+        <button id="letterD">D</button>
+        <button id="letterE">E</button>
+        <button id="letterF">F</button>
+        <button id="letterG">G</button>
+        <button id="letterH">H</button>
+        <button id="letterI">I</button>
+        <button id="letterJ">J</button>
+        <button id="letterK">K</button>
+        <button id="letterL">L</button>
+        <button id="letterM">M</button>
+        <button id="letterN">N</button>
+        <button id="letterO">O</button>
+        <button id="letterP">P</button>
+        <button id="letterQ">Q</button>
+        <button id="letterR">R</button>
+        <button id="letterS">S</button>
+        <button id="letterT">T</button>
+        <button id="letterU">U</button>
+        <button id="letterV">V</button>
+        <button id="letterW">W</button>
+        <button id="letterX">X</button>
+        <button id="letterY">Y</button>
+        <button id="letterZ">Z</button>
+      </div>
+    </div>
+
+    <script>
+      const categories = [
+        "paard",
+        "hond",
+        "kat",
+        "aap",
+        "aubergine",
+        "meloen",
+        "kiwi",
+        "muur",
+        "ogen",
+        "raam",
+        "deur",
+        "steen",
+        "mountainbike",
+      ];
+
+      const verkeerde_letter = [];
+
+      function random(mn, mx) {
+        return Math.random() * (mx - mn) + mn;
+      }
+      let lives = 10;
+
+      let antwoord = categories[Math.floor(random(1, 14)) - 1]; // String
+      let geraden_woord = new Array(antwoord.length).fill("_");
+      console.log("Hey!", antwoord);
+
+      // for (var i = 0; i < antwoord.length; i++) {
+      //   geraden_woord.push("_");
+      // }
+
+      console.log(geraden_woord);
+
+      document.getElementById("goed").innerHTML = geraden_woord.join(" ");
+
+      function clickedLetter(event) {
+        console.log(event.target.innerHTML);
+        let gekozen_letter = event.target.innerHTML.toLowerCase();
+
+        console.log(gekozen_letter);
+
+        geraden_woord = [...geraden_woord].map((chr, idx) => {
+          console.log(idx, chr, antwoord[idx], gekozen_letter);
+          if (gekozen_letter == antwoord[idx]) {
+            return gekozen_letter;
+          } else {
+            if (
+              !(
+                antwoord.includes(gekozen_letter) ||
+                verkeerde_letter.includes(gekozen_letter)
+              )
+            ) {
+              verkeerde_letter.push(gekozen_letter);
+              document.getElementById("vLetter").innerHTML =
+                verkeerde_letter.toString();
+              updateLives();
+            }
+          }
+          return chr;
+        });
+
+        console.log(geraden_woord);
+        document.getElementById("goed").innerHTML = geraden_woord.join(" ");
+
+        console.log(document.getElementById("goed"));
+      }
+      function updateLives() {
+        --lives;
+        document.getElementById("lives").innerHTML = "Levens:" + lives;
+        console.log(lives);
+        if(lives == 0) {
+        document.getElementById("posButtons").style.pointerEvents = "none";
+        let lost = document.getElementById("ifLost");
+        lost.showModal();
+        }
+      }
+
+      document.getElementById("lives").innerHTML = "Levens:" + lives;
+    </script>
+  </body>
+</html>

@@ -12,6 +12,30 @@
         background-color: cadetblue;
       }
 
+      a {
+        width: 150px;
+        padding: 0px 10px 5px 10px;
+        background-color: lightblue;
+        color: seagreen;
+        border: lightseagreen outset 1px;
+        text-decoration: none;
+
+      }
+
+      button > div {
+        pointer-events: none;
+      }
+
+      #ifLost {
+        text-align: center;
+        font: 2em sans-serif;
+        background-color: lightblue;
+        color: seagreen;
+        width: 600px;
+        height: 300px;
+        margin-bottom: 400px;
+      }
+
       #goed {
         padding: 80px;
         font-size: 50px;
@@ -88,6 +112,7 @@
     <dialog id="ifLost">
       <h1>YOU HAVE LOST!!!</h1>
       <a href="https://robvds1986.github.io/">reset</a> 
+      <img src="BareGaseousBarasinga-size_restricted.gif" alt="laughing skull" style="width:60px;height:60px;">
     </dialog>
 
 
@@ -103,49 +128,37 @@
           <p id="lives"></p>
         </div>
       </div>
-      <div id="posButtons" onclick="clickedLetter(event)">
-        <!--creat loop that draws lines for every letter of the word that has to be guessed-->
-        <!-- <script>
-      const element = document.getElementById("goed");
-      console.log(element);
-      const para = document.createElement("ul");
-      const node = document.createTextNode("_");
-      para.appendChild(node);
-      element.appendChild(para);
-    </script> -->
-        <!-- div to put the lines and letters in with a loop-->
-
-        <!-- hier komt de hangman als men foute letters kiest -->
-
+      <div id="posButtons" onclick="clickedLetter(event)" style="pointer-events: none;">
+       
         <!-- Buttons to input the players guesses-->
         <!-- Inside a div-->
 
-        <button id="letterA">A</button>
-        <button id="letterB">B</button>
-        <button id="letterC">C</button>
-        <button id="letterD">D</button>
-        <button id="letterE">E</button>
-        <button id="letterF">F</button>
-        <button id="letterG">G</button>
-        <button id="letterH">H</button>
-        <button id="letterI">I</button>
-        <button id="letterJ">J</button>
-        <button id="letterK">K</button>
-        <button id="letterL">L</button>
-        <button id="letterM">M</button>
-        <button id="letterN">N</button>
-        <button id="letterO">O</button>
-        <button id="letterP">P</button>
-        <button id="letterQ">Q</button>
-        <button id="letterR">R</button>
-        <button id="letterS">S</button>
-        <button id="letterT">T</button>
-        <button id="letterU">U</button>
-        <button id="letterV">V</button>
-        <button id="letterW">W</button>
-        <button id="letterX">X</button>
-        <button id="letterY">Y</button>
-        <button id="letterZ">Z</button>
+        <button id="letterA" style="pointer-events: auto;">A</button>
+        <button id="letterB" style="pointer-events: auto;">B</button>
+        <button id="letterC" style="pointer-events: auto;">C</button>
+        <button id="letterD" style="pointer-events: auto;">D</button>
+        <button id="letterE" style="pointer-events: auto;">E</button>
+        <button id="letterF" style="pointer-events: auto;">F</button>
+        <button id="letterG" style="pointer-events: auto;">G</button>
+        <button id="letterH" style="pointer-events: auto;">H</button>
+        <button id="letterI" style="pointer-events: auto;">I</button>
+        <button id="letterJ" style="pointer-events: auto;">J</button>
+        <button id="letterK" style="pointer-events: auto;">K</button>
+        <button id="letterL" style="pointer-events: auto;">L</button>
+        <button id="letterM" style="pointer-events: auto;">M</button>
+        <button id="letterN" style="pointer-events: auto;">N</button>
+        <button id="letterO" style="pointer-events: auto;">O</button>
+        <button id="letterP" style="pointer-events: auto;">P</button>
+        <button id="letterQ" style="pointer-events: auto;">Q</button>
+        <button id="letterR" style="pointer-events: auto;">R</button>
+        <button id="letterS" style="pointer-events: auto;">S</button>
+        <button id="letterT" style="pointer-events: auto;">T</button>
+        <button id="letterU" style="pointer-events: auto;">U</button>
+        <button id="letterV" style="pointer-events: auto;">V</button>
+        <button id="letterW" style="pointer-events: auto;">W</button>
+        <button id="letterX" style="pointer-events: auto;">X</button>
+        <button id="letterY" style="pointer-events: auto;">Y</button>
+        <button id="letterZ" style="pointer-events: auto;">Z</button>
       </div>
     </div>
 
