@@ -25,7 +25,15 @@
       button > div {
         pointer-events: none;
       }
-
+      #ifWon {
+        text-align: center;
+        font: 2em sans-serif;
+        background-color: lightblue;
+        color: seagreen;
+        width: 600px;
+        height: 300px;
+        margin-bottom: 400px;
+      }
       #ifLost {
         text-align: center;
         font: 2em sans-serif;
@@ -109,6 +117,11 @@
     </style>
 
     <!-- arrays for the alphabet, the categories and the words-->
+    <dialog id="ifWon">
+      <h1>YOU HAVE WON!!!</h1>
+      <a href="https://robvds1986.github.io/">reset</a>
+    </dialog>
+
     <dialog id="ifLost">
       <h1>YOU HAVE LOST!!!</h1>
       <a href="https://robvds1986.github.io/">reset</a> 
