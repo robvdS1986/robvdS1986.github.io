@@ -9,30 +9,30 @@
       body {
         background-color: cadetblue;
       }
-      
+
       /* reset the game link design and position */
-      
+
       a {
         width: 30px;
-        
+
         padding: 0px 10px 5px 10px;
         background-color: lightblue;
         color: seagreen;
         border: lightseagreen outset 1px;
         text-decoration: none;
       }
-      
+
       #Reset {
         position: absolute;
         margin-top: 65px;
       }
 
       /* pointer-events of the game */
-      
+
       div {
         pointer-events: none;
       }
-      
+
       button {
         pointer-events: auto;
       }
@@ -50,9 +50,9 @@
       button:focus {
         background-color: red;
       }
-      
+
       /* style of dialog pop-up's */
-      
+
       #ifWon {
         text-align: center;
         font: 1em sans-serif;
@@ -64,7 +64,7 @@
       }
       #ifLost {
         text-align: center;
-        
+
         font: 1em sans-serif;
         background-color: lightblue;
         color: seagreen;
@@ -72,46 +72,44 @@
         height: 160px;
         margin-bottom: 750px;
       }
-      
-      
-      
+
       /* colors, sizes, positions etc. of all the divs*/
-      
+
       .wrapper {
         width: 100%;
         text-align: center;
       }
-      
+
       #goed {
         padding: 80px;
         font-size: 3em;
       }
-      
+
       #goed2 {
         text-align: center;
       }
-      
+
       #foutlives {
         margin: 0 auto;
         width: 250px;
         display: flex;
         align-items: flex-start;
       }
-      
+
       #foutlives div {
         flex: 1;
         height: 100px;
         word-break: break-all;
       }
-      
+
       #fout {
         background-color: white;
         border: black solid 1px;
-        
+
         margin-bottom: 30px;
         margin-right: 20px;
       }
-      
+
       #lives {
         background-color: white;
         border: black solid 1px;
@@ -131,18 +129,18 @@
         height: 400px;
         color: white;
         border: black solid 1px;
-        
+
         background-color: white;
         padding: 15px;
       }
-      
+
       #hint {
         padding: 5px;
         font-size: 2em;
       }
 
       /* All the style values of the images*/
-      
+
       #hoofdp {
         visibility: hidden;
         position: absolute;
@@ -271,13 +269,8 @@
         width: 18.9px;
         height: 47.4px;
       }
-
-
-
-      
-
     </style>
-  <!-- costum pop-ups: ifwon, iflost, ifnext and skull gif when you lose -->
+    <!-- costum pop-ups: ifwon, iflost, ifnext and skull gif when you lose -->
     <dialog id="ifWon">
       <h1>YOU HAVE WON!!!</h1>
       <a href="https://robvds1986.github.io/" id="Reset">reset</a>
@@ -300,7 +293,7 @@
         <button onclick="nextWord()" id="nextW">Volgend woord</button>
       </form>
     </dialog>
-<!--The wrapper contains all the div's for the word too be guessed, 
+    <!--The wrapper contains all the div's for the word too be guessed, 
     the hangman drawingarea(including the hidden images), 
     the hint, the wrong letters, the lives and all the buttons-->
 
@@ -412,7 +405,6 @@
       <br /><br />
 
       <div id="foutlives">
-
         <div id="fout">
           <p>verkeerde letters:</p>
           <p id="vLetter"></p>
@@ -421,15 +413,12 @@
         <div>
           <p id="lives"></p>
         </div>
-
       </div>
 
       <!-- Buttons to input the players guesses-->
       <!-- Inside a div-->
 
       <div id="posButtons" onclick="clickedLetter(event)">
-
-
         <button id="letterA">A</button>
         <button id="letterB">B</button>
         <button id="letterC">C</button>
@@ -463,7 +452,7 @@
       // Array containing the words to be guessed
       const categories = [
         "paard",
-        "hond", 
+        "hond",
         "kat",
         "aap",
         "aubergine",
@@ -499,76 +488,83 @@
 
       let lives = 12;
 
-      // function to pick the word (at random) to be guessed and a switch 
+      // function to pick the word (at random) to be guessed and a switch
       // to display the right hint to help the player guess
 
       function random() {
         return Math.floor(Math.random() * categories.length);
       }
 
-      
       let antwoord = categories[random()];
+
+      // Here the underscores, for the word to be guessed, are beeing created.
+
+      let geradenWoordArray = new Array(antwoord.length).fill("_");
+
+      // Here the commas between the underscores are being removed.
+      document.getElementById("goed").innerHTML = geradenWoordArray.join(" ");
 
       switch (antwoord) {
         case "paard":
-          document.getElementById("hint").innerHTML="In de middeleeuwen hadden we dit dier vaak nodig";
-          break
+          document.getElementById("hint").innerHTML =
+            "In de middeleeuwen hadden we dit dier vaak nodig";
+          break;
         case "hond":
-        document.getElementById("hint").innerHTML="Het is een huisdier waar je mee kunt gaan wandelen";
-          break
+          document.getElementById("hint").innerHTML =
+            "Het is een huisdier waar je mee kunt gaan wandelen";
+          break;
         case "kat":
-        document.getElementById("hint").innerHTML="Het is een eigenwijs huisdier";
-          break
+          document.getElementById("hint").innerHTML =
+            "Het is een eigenwijs huisdier";
+          break;
         case "aap":
-        document.getElementById("hint").innerHTML="Dit dier klimpt in de bomen";
-          break
+          document.getElementById("hint").innerHTML =
+            "Dit dier klimpt in de bomen";
+          break;
         case "aubergine":
-        document.getElementById("hint").innerHTML="Een lange korte vrucht";
-          break
+          document.getElementById("hint").innerHTML = "Een lange korte vrucht";
+          break;
         case "meloen":
-        document.getElementById("hint").innerHTML="Een grote waterige vrucht";
-          break
+          document.getElementById("hint").innerHTML =
+            "Een grote waterige vrucht";
+          break;
         case "kiwi":
-        document.getElementById("hint").innerHTML="Kleine groene haarige vrucht";
-          break
+          document.getElementById("hint").innerHTML =
+            "Kleine groene haarige vrucht";
+          break;
         case "muur":
-        document.getElementById("hint").innerHTML="Het plafond wordt ondersteunt door ....";
-          break
+          document.getElementById("hint").innerHTML =
+            "Het plafond wordt ondersteunt door ....";
+          break;
         case "ogen":
-        document.getElementById("hint").innerHTML="Iedereen heeft er twee van";
-          break
+          document.getElementById("hint").innerHTML =
+            "Iedereen heeft er twee van";
+          break;
         case "raam":
-        document.getElementById("hint").innerHTML="Er zit glas in";
-          break
+          document.getElementById("hint").innerHTML = "Er zit glas in";
+          break;
         case "deur":
-        document.getElementById("hint").innerHTML="Je opent het om ergens naar binnen te gaan";
-          break
+          document.getElementById("hint").innerHTML =
+            "Je opent het om ergens naar binnen te gaan";
+          break;
         case "steen":
-        document.getElementById("hint").innerHTML="Ze liggen in een beek";
-          break
+          document.getElementById("hint").innerHTML = "Ze liggen in een beek";
+          break;
         case "mountainbike":
-        document.getElementById("hint").innerHTML="Men kan er op fietsen";
-          break
-        
+          document.getElementById("hint").innerHTML = "Men kan er op fietsen";
+          break;
       }
 
-      
-      // Here the underscores, for the word to be guessed, are beeing created.
-      
-      let geradenWoordArray = new Array(antwoord.length).fill("_");
-      
       console.log("Hey!", antwoord);
       console.log("index:", categories.indexOf(antwoord));
       console.log("?!", categories);
 
       console.log(geradenWoordArray);
-      // Here the commas between the underscores are being removed.
-      document.getElementById("goed").innerHTML = geradenWoordArray.join(" ");
 
-      // Function for the functionality of the letter buttons with map() methode 
-      // to check if the letters are included in the answer and exchange 
-      // the underscores with letters at the right position. And if statements 
-      // for the letters that were guessed wrong(if so the update lives function wil be called) 
+      // Function for the functionality of the letter buttons with map() methode
+      // to check if the letters are included in the answer and exchange
+      // the underscores with letters at the right position. And if statements
+      // for the letters that were guessed wrong(if so the update lives function wil be called)
       // and statements for the popups next word or if you have won.
 
       function clickedLetter(event) {
@@ -599,18 +595,17 @@
           return chr;
         });
 
-        
         document.getElementById("goed").innerHTML = geradenWoordArray.join(" ");
 
         console.log(document.getElementById("goed"));
-        
+
         console.log("empty", categories);
 
         const woord_is_ingevuld = !geradenWoordArray.includes("_");
         const alle_woorden_gespeeld = categories.length == 0;
         const nog_woorden_te_spelen = !alle_woorden_gespeeld;
         console.log(!alle_woorden_gespeeld);
-        
+
         if (woord_is_ingevuld && categories.length !== 0) {
           document.getElementById("goed2").innerHTML =
             geradenWoordArray.join(" ");
@@ -622,77 +617,13 @@
           console.log("!!", antwoord);
         }
 
-        
-
         if (categories.length == 0) {
           console.log("hello");
           document.getElementById("ifWon").showModal();
           document.getElementById("ifNext").close();
         }
       }
-
-    // The function that gets called when the button, in the nextword popup, is being clicked.
-    // this function pickes the next word to be guessed and creates the underscores. 
-    // Plus it wipes the wrong letters from the wrong letters array. 
-
-      function nextWord() {
-        document.getElementById("vLetter").innerHTML = "";
-        
-        antwoord = categories[random()];
-        geradenWoordArray = new Array(antwoord.length).fill("_");
-        document.getElementById("goed").innerHTML = geradenWoordArray.join(" ");
-        console.log("Hey!", categories);
-        console.log("Hey!", antwoord);
-        if (antwoord !== undefined) {
-         
-          console.log("index", categories.indexOf(antwoord));
-          switch (antwoord) {
-        case "paard":
-          document.getElementById("hint").innerHTML="In de middeleeuwen hadden we dit dier vaak nodig";
-          break
-        case "hond":
-        document.getElementById("hint").innerHTML="Het is een huisdier waar je mee kunt gaan wandelen";
-          break
-        case "kat":
-        document.getElementById("hint").innerHTML="Het is een eigenwijs huisdier";
-          break
-        case "aap":
-        document.getElementById("hint").innerHTML="Dit dier klimpt in de bomen";
-          break
-        case "aubergine":
-        document.getElementById("hint").innerHTML="Een lange korte vrucht";
-          break
-        case "meloen":
-        document.getElementById("hint").innerHTML="Een grote waterige vrucht";
-          break
-        case "kiwi":
-        document.getElementById("hint").innerHTML="Kleine groene haarige vrucht";
-          break
-        case "muur":
-        document.getElementById("hint").innerHTML="Het plafond wordt ondersteunt door ....";
-          break
-        case "ogen":
-        document.getElementById("hint").innerHTML="Iedereen heeft er twee van";
-          break
-        case "raam":
-        document.getElementById("hint").innerHTML="Er zit glas in";
-          break
-        case "deur":
-        document.getElementById("hint").innerHTML="Je opent het om ergens naar binnen te gaan";
-          break
-        case "steen":
-        document.getElementById("hint").innerHTML="Ze liggen in een beek";
-          break
-        case "mountainbike":
-        document.getElementById("hint").innerHTML="Men kan er op fietsen";
-          break
-        
-      }
-        }
-        
-      }
-
-      // Function or updating the live count and to create the poor hangman 
+      // Function or updating the live count and to create the poor hangman
       // when lives are being lost by the player.
 
       function updateLives() {
@@ -750,9 +681,80 @@
             break;
         }
       }
-      
+
       // For displaying the lives
       document.getElementById("lives").innerHTML = "Levens:" + lives;
+
+      // The function that gets called when the button, in the nextword popup, is being clicked.
+      // this function pickes the next word to be guessed and creates the underscores.
+      // Plus it wipes the wrong letters from the wrong letters array.
+
+      function nextWord() {
+        document.getElementById("vLetter").innerHTML = "";
+
+        antwoord = categories[random()];
+        geradenWoordArray = new Array(antwoord.length).fill("_");
+        document.getElementById("goed").innerHTML = geradenWoordArray.join(" ");
+        console.log("Hey!", categories);
+        console.log("Hey!", antwoord);
+        if (antwoord !== undefined) {
+          console.log("index", categories.indexOf(antwoord));
+          switch (antwoord) {
+            case "paard":
+              document.getElementById("hint").innerHTML =
+                "In de middeleeuwen hadden we dit dier vaak nodig";
+              break;
+            case "hond":
+              document.getElementById("hint").innerHTML =
+                "Het is een huisdier waar je mee kunt gaan wandelen";
+              break;
+            case "kat":
+              document.getElementById("hint").innerHTML =
+                "Het is een eigenwijs huisdier";
+              break;
+            case "aap":
+              document.getElementById("hint").innerHTML =
+                "Dit dier klimpt in de bomen";
+              break;
+            case "aubergine":
+              document.getElementById("hint").innerHTML =
+                "Een lange korte vrucht";
+              break;
+            case "meloen":
+              document.getElementById("hint").innerHTML =
+                "Een grote waterige vrucht";
+              break;
+            case "kiwi":
+              document.getElementById("hint").innerHTML =
+                "Kleine groene haarige vrucht";
+              break;
+            case "muur":
+              document.getElementById("hint").innerHTML =
+                "Het plafond wordt ondersteunt door ....";
+              break;
+            case "ogen":
+              document.getElementById("hint").innerHTML =
+                "Iedereen heeft er twee van";
+              break;
+            case "raam":
+              document.getElementById("hint").innerHTML = "Er zit glas in";
+              break;
+            case "deur":
+              document.getElementById("hint").innerHTML =
+                "Je opent het om ergens naar binnen te gaan";
+              break;
+            case "steen":
+              document.getElementById("hint").innerHTML =
+                "Ze liggen in een beek";
+              break;
+            case "mountainbike":
+              document.getElementById("hint").innerHTML =
+                "Men kan er op fietsen";
+              break;
+          }
+        }
+      }
+
     </script>
   </body>
 </html>
