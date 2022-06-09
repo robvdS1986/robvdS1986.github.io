@@ -81,25 +81,24 @@
         text-align: center;
       }
 
-     
       #hoofdtitel {
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
         font-size: 4em;
-        color:#fff;
+        color: #fff;
       }
 
       #goed {
         color: #fff;
         padding-bottom: 50px;
         font-size: 3em;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
       }
 
       #goed2 {
         text-align: center;
       }
-
-      
 
       #foutlives {
         position: absolute;
@@ -112,34 +111,36 @@
 
       #foutlives div {
         flex: 1;
-        
+
         word-break: break-all;
       }
 
-      #fouttitel{
-        position:absolute;
+      #fouttitel {
+        position: absolute;
         margin-left: 1190px;
         top: 470px;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
         font-size: 2em;
         color: #fff;
       }
 
       #fout {
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
         background-color: white;
         border: black solid 1px;
         width: 50px;
         height: 90px;
-       top: 400px;
+        
         margin-left: 1190px;
-
       }
 
       #lives {
         position: absolute;
         margin-left: 1190px;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
         background-color: white;
         border: black solid 1px;
         width: 70px;
@@ -166,21 +167,23 @@
       #hint {
         position: absolute;
         margin-left: 1190px;
-        color:#fff;
+        color: #fff;
         width: 400px;
         top: 400px;
         padding: 5px;
         text-align: left;
         font-size: 1.5em;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
       }
 
-      #hinttitel { 
+      #hinttitel {
         position: absolute;
         margin-left: 1190px;
         top: 370px;
         color: #fff;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
       }
 
       /* All the style values of the images*/
@@ -448,19 +451,19 @@
 
       <div>
         <h1 id="hinttitel">Hint:</h1>
-        <p id="hint"></p></div>
+
+        <p id="hint"></p>
+      </div>
       <br /><br />
 
-      
-        <h1 id="fouttitel">Verkeerde letters:</h1>
-        <div id="fout">
-          <p id="vLetter"></p>
-        </div>
+      <div id="fout">
+        <h1 >Verkeerde letters:</h1>
+        <p id="vLetter"></p>
+      </div>
 
-        <div>
-          <p id="lives"></p>
-        </div>
-      
+      <div>
+        <p id="lives"></p>
+      </div>
 
       <!-- Buttons to input the players guesses-->
       <!-- Inside a div-->
@@ -569,7 +572,8 @@
             "Dit dier klimpt in de bomen";
           break;
         case "aubergine":
-          document.getElementById("hint").innerHTML = "Een langwerpige kromme vrucht";
+          document.getElementById("hint").innerHTML =
+            "Een langwerpige kromme vrucht";
           break;
         case "meloen":
           document.getElementById("hint").innerHTML =
@@ -801,7 +805,6 @@
           }
         }
       }
-
     </script>
   </body>
 </html>
