@@ -82,7 +82,9 @@
         font-size: 4em;
         color: #fff;
       }
-
+      #teradenwoord2 {
+        text-align: center;
+      }
       #teradenwoord {
         color: #fff;
         padding-bottom: 50px;
@@ -90,41 +92,19 @@
         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
           sans-serif;
       }
-
-     
-      #foutlives {
+      /* 
+      #vLetter { 
         position: absolute;
-        margin-left: 1190px;
-        top: 550px;
-        width: 300px;
-        display: flex;
-        align-items: flex-start;
-      }
+      } */
 
-      #foutlives div {
-        flex: 1;
-
-        word-break: break-all;
-      }
-
-      #fouttitel {
-        position: absolute;
-        margin-left: 1190px;
-        top: 470px;
-        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-          sans-serif;
-        font-size: 2em;
-        color: #fff;
-      }
-
-      #fout {
+      #verkeerdeLetters {
         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
           sans-serif;
         background-color: white;
         border: black solid 1px;
         width: 50px;
         height: 90px;
-        
+        top: 500px;
         margin-left: 1190px;
       }
 
@@ -178,16 +158,20 @@
           sans-serif;
       }
 
+      #infoLeven {
+        height: 10px;
+      }
+
       /* All the style values of the images*/
 
-      #hoofdp {
+      #hoofd {
         visibility: hidden;
         position: absolute;
         margin-top: 30px;
         margin-left: 183px;
       }
 
-      #hoofd {
+      #hoofdIMG {
         width: 49.3px;
         height: 50px;
       }
@@ -216,14 +200,14 @@
         height: 93.5px;
       }
 
-      #torsox {
+      #torso {
         visibility: hidden;
         position: absolute;
         margin-top: 80px;
         margin-left: 188px;
       }
 
-      #torso {
+      #torsoIMG {
         width: 52.1px;
         height: 86.1px;
       }
@@ -238,7 +222,7 @@
         height: 117.7px;
       }
 
-      #recterBeen {
+      #rechterBeen {
         visibility: hidden;
         position: absolute;
         margin-left: 168px;
@@ -285,26 +269,26 @@
         height: 9.3px;
       }
 
-      #stBalk {
+      #steunBalk {
         visibility: hidden;
         position: absolute;
         margin-top: 20px;
         margin-left: 150px;
       }
 
-      #steunBalk {
+      #steunBalkIMG {
         width: 32.9px;
         height: 35.3px;
       }
 
-      #strickG {
+      #strickGalg {
         visibility: hidden;
         position: absolute;
         margin-left: 190px;
         margin-top: 20px;
       }
 
-      #strickGalg {
+      #strickGalgIMG {
         width: 18.9px;
         height: 47.4px;
       }
@@ -328,7 +312,7 @@
 
     <dialog id="ifNext">
       <form method="dialog">
-        <h1 id="teradenwoord"></h1>
+        <h1 id="teradenwoord2"></h1>
         <button onclick="nextWord()" id="nextW">Volgend woord</button>
       </form>
     </dialog>
@@ -340,20 +324,20 @@
       <h1 id="hoofdtitel">Galgje</h1>
       <div id="teradenwoord"></div>
       <div id="hangdanny">
-        <div id="hoofdp">
+        <div id="hoofd">
           <img
             src="hoofd.png"
             alt="Hoofd"
-            id="hoofd"
+            id="hoofdIMG"
             width="439px"
             height="500px"
           />;
         </div>
-        <div id="torsox">
+        <div id="torso">
           <img
             src="torso.png"
             alt="torso"
-            id="torso"
+            id="torsoIMG"
             width="521px"
             height="861px"
           />;
@@ -416,42 +400,39 @@
           <img
             src="balk galg onder.png"
             alt="balk galg onder"
-            id="balkOnder"
+            id="galgVoetIMG"
             width="723px"
             height="93px"
           />;
         </div>
-        <div id="stBalk">
+        <div id="steunBalk">
           <img
             src="steun balk.png"
             alt="steun balk"
-            id="steunBalk"
+            id="steunBalkIMG"
             width="329px"
             height="353px"
           />;
         </div>
-        <div id="strickG">
+        <div id="strickGalg">
           <img
             src="strick galg.png"
             alt="strick galg"
-            id="strickGalg"
+            id="strickGalgIMG"
             width="189px"
             height="474px"
           />;
         </div>
       </div>
 
-      <div>
+      <div id="infoLeven">
         <h1 id="hinttitel">Hint:</h1>
 
         <p id="hint"></p>
       </div>
-      <br /><br />
 
-      <div id="fout">
-        <h1 >Verkeerde letters:</h1>
-        <p id="vLetter"></p>
-      </div>
+      <h1>Verkeerde letters:</h1>
+      <p id="verkeerdeLetters"></p> 
 
       <div>
         <p id="lives"></p>
@@ -544,7 +525,8 @@
       let geradenWoordArray = new Array(antwoord.length).fill("_");
 
       // Here the commas between the underscores are being removed.
-      document.getElementById("teradenwoord").innerHTML = geradenWoordArray.join(" ");
+      document.getElementById("teradenwoord").innerHTML =
+        geradenWoordArray.join(" ");
 
       switch (antwoord) {
         case "paard":
@@ -630,7 +612,7 @@
             );
             if (verkeerde_gekozenLetter) {
               verkeerde_letter.push(gekozen_letter);
-              document.getElementById("vLetter").innerHTML =
+              document.getElementById("verkeerdeLetters").innerHTML =
                 verkeerde_letter.toString();
               updateLives();
             }
@@ -638,7 +620,8 @@
           return chr;
         });
 
-        document.getElementById("teradenwoord").innerHTML = geradenWoordArray.join(" ");
+        document.getElementById("teradenwoord").innerHTML =
+          geradenWoordArray.join(" ");
 
         console.log(document.getElementById("teradenwoord"));
 
@@ -650,7 +633,7 @@
         console.log(!alle_woorden_gespeeld);
 
         if (woord_is_ingevuld && categories.length !== 0) {
-          document.getElementById("teradenwoord").innerHTML =
+          document.getElementById("teradenwoord2").innerHTML =
             geradenWoordArray.join(" ");
           if (!categories.length == 0) {
             document.getElementById("ifNext").showModal();
@@ -683,7 +666,7 @@
             break;
 
           case 9:
-            document.getElementById("stBalk").style.visibility = "visible";
+            document.getElementById("steunBalk").style.visibility = "visible";
             break;
 
           case 8:
@@ -699,11 +682,11 @@
             break;
 
           case 5:
-            document.getElementById("hoofdp").style.visibility = "visible";
+            document.getElementById("hoofd").style.visibility = "visible";
             break;
 
           case 4:
-            document.getElementById("torsox").style.visibility = "visible";
+            document.getElementById("torso").style.visibility = "visible";
             break;
 
           case 3:
@@ -733,11 +716,12 @@
       // Plus it wipes the wrong letters from the wrong letters array.
 
       function nextWord() {
-        document.getElementById("vLetter").innerHTML = "";
+        document.getElementById("verkeerdeLetters").innerHTML = "";
 
         antwoord = categories[random()];
         geradenWoordArray = new Array(antwoord.length).fill("_");
-        document.getElementById("teradenwoord").innerHTML = geradenWoordArray.join(" ");
+        document.getElementById("teradenwoord").innerHTML =
+          geradenWoordArray.join(" ");
         console.log("Hey!", categories);
         console.log("Hey!", antwoord);
         if (antwoord !== undefined) {
