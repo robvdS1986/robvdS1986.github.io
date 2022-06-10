@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <!-- Entire css and positions-->
+
+    <style>
+      /* background color of entire game. */
+      body {
+        background-color: cadetblue;
+      }
+
+      /* reset the game link design and position */
+
+      a {
+        width: 30px;
+        padding: 0px 8px 5px 8px;
+        background-color: lightblue;
+        color: seagreen;
+        border: lightseagreen outset 1px;
+        text-decoration: none;
+      }
+
+      #Reset {
+        position: absolute;
+        display: block;
+        margin-left: 172px;
+      }
+
+      /* pointer-events of the game */
+
+      div {
+        pointer-events: none;
+      }
+      button {
+        pointer-events: auto;
+      }
+
+      /* font-size, :hover and :focus for the buttons  */
+
+      button {
+        font-size: 2em;
+      }
+
+      button:hover {
+        background-color: orange;
+      }
+
+      button:focus {
+        background-color: red;
+      }
+
+      /* style of dialog pop-up's */
+
+      #ifWon {
+        text-align: center;
+        font: 0.8em sans-serif;
+        background-color: lightblue;
+        color: seagreen;
+        width: 400px;
+        height: 160px;
+        margin-bottom: 750px;
+      }
+      #ifLost {
+        text-align: center;
+
+        font: 1em sans-serif;
+        background-color: lightblue;
+        color: seagreen;
+        width: 400px;
+        height: 160px;
+        margin-bottom: 750px;
+      }
+
+      /* colors, sizes, positions etc. of all the divs*/
+
+      .wrapper {
+        display: grid;
+        grid:
+          
+          "hangdanny hangdanny hangdanny hangdanny hinttitel "
+          "hangdanny hangdanny hangdanny hangdanny hint "
+          "hangdanny hangdanny hangdanny hangdanny verkeerdeInvoer "
+          "hangdanny hangdanny hangdanny hangdanny verkeerdeLetters "
+          "hangdanny hangdanny hangdanny hangdanny lives "
+          " l posButtons posButtons posButtons posButtons ";
+        grid-gap: 7px;
+        width: 1800px;
+      }
+
+      #hoofdtitel {
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        font-size: 4em;
+        color: #fff;
+        text-align: center;
+      }
+      #teradenwoord2 {
+        
+        margin: 0 auto;
+      }
+      #teradenwoord {
+        text-align: center;
+        color: #fff;
+        padding-bottom: 50px;
+        font-size: 3em;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        margin: 0 auto;
+      }
+      /* 
+      #vLetter { 
+        position: absolute;
+      } */
+
+      #verkeerdeLetters {
+        grid-area: verkeerdeLetters;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        background-color: white;
+        border: black solid 1px;
+        width: 100px;
+        height: 50px;
+        word-wrap: break-word;
+      }
+
+      #lives {
+        grid-area: lives;
+        position: relative;
+
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        background-color: white;
+        border: black solid 1px;
+        width: 70px;
+        height: fit-content;
+        margin-bottom: 5%;
+      }
+
+      #posButtons {
+        display: inline-block;
+        grid-area: posButtons;
+        text-align: center;
+        width: 800px;
+        margin: 0 auto;
+      }
+
+      #hangdanny {
+        grid-area: hangdanny;
+        margin-left: 700px;
+        width: 500px;
+        height: 500px;
+        color: white;
+        border: black solid 1px;
+
+        background-color: white;
+        padding: 15px;
+      }
+
+      #hint {
+        grid-area: hint;
+        position: relative;
+        margin-right: 250px;
+        color: #fff;
+        width: 400px;
+
+        padding: 5px;
+        text-align: left;
+        font-size: 1.5em;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+      }
+
+      #hinttitel {
+        grid-area: hinttitel;
+        position: relative;
+
+        color: #fff;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+      }
+      #verkeerdeInvoer {
+        grid-area: verkeerdeInvoer;
+        position: relative;
+
+        color: #fff;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+      }
+
+      /* All the style values of the images*/
+
+      #hoofd {
+        visibility: hidden;
+        position: absolute;
+        margin-top: 30px;
+        margin-left: 183px;
+      }
+
+      #hoofdIMG {
+        width: 49.3px;
+        height: 50px;
+      }
+
+      #linkerArm {
+        visibility: hidden;
+        position: absolute;
+        margin-top: 80px;
+        margin-left: 240px;
+      }
+
+      #linkerArmIMG {
+        width: 21.3px;
+        height: 101.5px;
+      }
+
+      #rechterArm {
+        visibility: hidden;
+        position: absolute;
+        margin-top: 80px;
+        margin-left: 149.5px;
+      }
+
+      #rechterArmIMG {
+        width: 39.3px;
+        height: 93.5px;
+      }
+
+      #torso {
+        visibility: hidden;
+        position: absolute;
+        margin-top: 80px;
+        margin-left: 188px;
+      }
+
+      #torsoIMG {
+        width: 52.1px;
+        height: 86.1px;
+      }
+      #linkerBeen {
+        visibility: hidden;
+        position: absolute;
+        margin-left: 213px;
+        margin-top: 162px;
+      }
+      #linkerBeenIMG {
+        width: 42px;
+        height: 117.7px;
+      }
+
+      #rechterBeen {
+        visibility: hidden;
+        position: absolute;
+        margin-left: 168px;
+        margin-top: 162px;
+      }
+      #rechterBeenIMG {
+        width: 44.6px;
+        height: 128.2px;
+      }
+
+      #paalGalg {
+        visibility: hidden;
+        position: absolute;
+        margin-top: 20px;
+        margin-left: 140px;
+      }
+
+      #paalGalgIMG {
+        width: 9.8px;
+        height: 330px;
+      }
+
+      #balkBoven {
+        visibility: hidden;
+        position: absolute;
+        margin-top: 6px;
+        margin-left: 140px;
+      }
+
+      #balkBovenIMG {
+        width: 72.3px;
+        height: 9.3px;
+      }
+
+      #galgVoet {
+        visibility: hidden;
+        position: absolute;
+        margin-top: 338px;
+        margin-left: 119px;
+      }
+
+      #galgVoetIMG {
+        width: 162.3px;
+        height: 9.3px;
+      }
+
+      #steunBalk {
+        visibility: hidden;
+        position: absolute;
+        margin-top: 20px;
+        margin-left: 150px;
+      }
+
+      #steunBalkIMG {
+        width: 32.9px;
+        height: 35.3px;
+      }
+
+      #strickGalg {
+        visibility: hidden;
+        position: absolute;
+        margin-left: 190px;
+        margin-top: 20px;
+      }
+
+      #strickGalgIMG {
+        width: 18.9px;
+        height: 47.4px;
+      }
+    </style>
+    <!-- costum pop-ups: ifwon, iflost, ifnext and skull gif when you lose -->
+    <dialog id="ifWon">
+      <h1>JE HEBT GEWONNEN!!!</h1>
+      <a href="https://robvds1986.github.io/" id="Reset">reset</a>
+    </dialog>
+
+    <dialog id="ifLost">
+      <h1>JE HEBT VERLOREN!!!</h1>
+
+      <img
+        src="BareGaseousBarasinga-size_restricted.gif"
+        alt="laughing skull"
+        style="width: 60px; height: 60px"
+      />
+      <a href="https://robvds1986.github.io/" id="Reset">reset</a>
+    </dialog>
+
+    <dialog id="ifNext">
+      <form method="dialog">
+        <h1 id="teradenwoord2"></h1>
+        <button onclick="nextWord()" id="nextW">Volgend woord</button>
+      </form>
+    </dialog>
+    <!--The wrapper contains all the div's for the word too be guessed, 
+    the hangman drawingarea(including the hidden images), 
+    the hint, the wrong letters, the lives and all the buttons-->
+    
+
+    <h1 id="hoofdtitel">Galgje</h1>
+    <div id="teradenwoord"></div>
+    <div class="wrapper">
+      <div id="hangdanny">
+        <div id="hoofd">
+          <img
+            src="hoofd.png"
+            alt="Hoofd"
+            id="hoofdIMG"
+            width="1039px"
+            height="1100px"
+          />;
+        </div>
+        <div id="torso">
+          <img
+            src="torso.png"
+            alt="torso"
+            id="torsoIMG"
+            width="1121px"
+            height="1461px"
+          />;
+        </div>
+        <div id="linkerArm">
+          <img
+            src="linker arm.png"
+            alt="linker arm"
+            id="linkerArmIMG"
+            width="813px"
+            height="1615px"
+          />;
+        </div>
+        <div id="rechterArm">
+          <img
+            src="rechter arm.png"
+            alt="rechter arm"
+            id="rechterArmIMG"
+            width="993px"
+            height="1535px"
+          />;
+        </div>
+        <div id="linkerBeen">
+          <img
+            src="linker been.png"
+            alt="linker been"
+            id="linkerBeenIMG"
+            width="1120px"
+            height="1877px"
+          />;
+        </div>
+        <div id="rechterBeen">
+          <img
+            src="rechter been.png"
+            alt="rechter been"
+            id="rechterBeenIMG"
+            width="1146px"
+            height="1982px"
+          />;
+        </div>
+        <div id="paalGalg">
+          <img
+            src="paal galg.png"
+            alt="paal galg"
+            id="paalGalgIMG"
+            width="798px"
+            height="1694px"
+          />;
+        </div>
+        <div id="balkBoven">
+          <img
+            src="balk galg boven.png"
+            alt="balk galg boven"
+            id="balkBovenIMG"
+            width="1423px"
+            height="793px"
+          />;
+        </div>
+        <div id="galgVoet">
+          <img
+            src="balk galg onder.png"
+            alt="balk galg onder"
+            id="galgVoetIMG"
+            width="1423px"
+            height="793px"
+          />;
+        </div>
+        <div id="steunBalk">
+          <img
+            src="steun balk.png"
+            alt="steun balk"
+            id="steunBalkIMG"
+            width="1029px"
+            height="1053px"
+          />;
+        </div>
+        <div id="strickGalg">
+          <img
+            src="strick galg.png"
+            alt="strick galg"
+            id="strickGalgIMG"
+            width="889px"
+            height="1174px"
+          />;
+        </div>
+      </div>
+
+      <h1 id="hinttitel">Hint:</h1>
+
+      <p id="hint"></p>
+
+      <h1 id="verkeerdeInvoer">Verkeerde letters:</h1>
+      <p id="verkeerdeLetters"></p>
+
+      <p id="lives"></p>
+
+      <!-- Buttons to input the players guesses-->
+      <!-- Inside a div-->
+
+      <div id="posButtons" onclick="clickedLetter(event)">
+        <button id="letterA">A</button>
+        <button id="letterB">B</button>
+        <button id="letterC">C</button>
+        <button id="letterD">D</button>
+        <button id="letterE">E</button>
+        <button id="letterF">F</button>
+        <button id="letterG">G</button>
+        <button id="letterH">H</button>
+        <button id="letterI">I</button>
+        <button id="letterJ">J</button>
+        <button id="letterK">K</button>
+        <button id="letterL">L</button>
+        <button id="letterM">M</button>
+        <button id="letterN">N</button>
+        <button id="letterO">O</button>
+        <button id="letterP">P</button>
+        <button id="letterQ">Q</button>
+        <button id="letterR">R</button>
+        <button id="letterS">S</button>
+        <button id="letterT">T</button>
+        <button id="letterU">U</button>
+        <button id="letterV">V</button>
+        <button id="letterW">W</button>
+        <button id="letterX">X</button>
+        <button id="letterY">Y</button>
+        <button id="letterZ">Z</button>
+      </div>
+    </div>
+
+    <script>
+      // Array containing the words to be guessed
+      const categories = [
+        "paard",
+        "hond",
+        "kat",
+        "aap",
+        "aubergine",
+        "meloen",
+        "kiwi",
+        "muur",
+        "ogen",
+        "raam",
+        "deur",
+        "steen",
+        "mountainbike",
+      ];
+      // "In de middeleeuwen hadden we dit dier vaak nodig"
+      // "Het is een huisdier waar je mee kunt gaan wandelen"
+      // "Het is een eigenwijs huisdier"
+      // "Dit dier klimpt in de bomen"
+      // "Een lange korte vrucht"
+      // "Een grote waterige vrucht"
+      // "Kleine groene haarige vrucht"
+      // "Het plafond wordt ondersteunt door ...."
+      // "Iedereen heeft er twee van"
+      // "Er zit glas in"
+      // "Je opent het om ergens naar binnen te gaan"
+      // "Ze liggen in een beek"
+      // "Men kan er op fietsen"
+
+      // Empty array for the wrong letters.
+
+      let verkeerde_letter = [];
+
+      // player lives.
+
+      let lives = 12;
+
+      // function to pick the word (at random) to be guessed and a switch
+      // to display the right hint to help the player guess
+
+      function random() {
+        return Math.floor(Math.random() * categories.length);
+      }
+
+      let antwoord = categories[random()];
+
+      // Here the underscores, for the word to be guessed, are beeing created.
+
+      let geradenWoordArray = new Array(antwoord.length).fill("_");
+
+      // Here the commas between the underscores are being removed.
+      document.getElementById("teradenwoord").innerHTML =
+        geradenWoordArray.join(" ");
+
+      switch (antwoord) {
+        case "paard":
+          document.getElementById("hint").innerHTML =
+            "In de middeleeuwen hadden we dit dier vaak nodig";
+          break;
+        case "hond":
+          document.getElementById("hint").innerHTML =
+            "Het is een huisdier waar je mee kunt gaan wandelen";
+          break;
+        case "kat":
+          document.getElementById("hint").innerHTML =
+            "Het is een eigenwijs huisdier";
+          break;
+        case "aap":
+          document.getElementById("hint").innerHTML =
+            "Dit dier klimpt in de bomen";
+          break;
+        case "aubergine":
+          document.getElementById("hint").innerHTML =
+            "Een langwerpige kromme vrucht";
+          break;
+        case "meloen":
+          document.getElementById("hint").innerHTML =
+            "Een grote waterige vrucht";
+          break;
+        case "kiwi":
+          document.getElementById("hint").innerHTML =
+            "Kleine groene haarige vrucht";
+          break;
+        case "muur":
+          document.getElementById("hint").innerHTML =
+            "Het plafond wordt ondersteunt door ....";
+          break;
+        case "ogen":
+          document.getElementById("hint").innerHTML =
+            "Iedereen heeft er twee van";
+          break;
+        case "raam":
+          document.getElementById("hint").innerHTML = "Er zit glas in";
+          break;
+        case "deur":
+          document.getElementById("hint").innerHTML =
+            "Je opent het om ergens naar binnen te gaan";
+          break;
+        case "steen":
+          document.getElementById("hint").innerHTML = "Ze liggen in een beek";
+          break;
+        case "mountainbike":
+          document.getElementById("hint").innerHTML = "Men kan er op fietsen";
+          break;
+      }
+
+      console.log("Hey!", antwoord);
+      console.log("index:", categories.indexOf(antwoord));
+      console.log("?!", categories);
+
+      console.log(geradenWoordArray);
+
+      // Function for the functionality of the letter buttons with map() methode
+      // to check if the letters are included in the answer and exchange
+      // the underscores with letters at the right position. And if statements
+      // for the letters that were guessed wrong(if so the update lives function wil be called)
+      // and statements for the popups next word or if you have won.
+
+      function clickedLetter(event) {
+        console.log(event.target.innerHTML);
+        let gekozen_letter = event.target.innerHTML.toLowerCase();
+
+        console.log(gekozen_letter);
+
+        geradenWoordArray = [...geradenWoordArray].map((chr, idx) => {
+          console.log(idx, chr, antwoord[idx], gekozen_letter);
+
+          if (gekozen_letter == antwoord[idx]) {
+            gekozen_letter.toString;
+
+            return gekozen_letter;
+          } else {
+            let verkeerde_gekozenLetter = !(
+              antwoord.includes(gekozen_letter) ||
+              verkeerde_letter.includes(gekozen_letter)
+            );
+            if (verkeerde_gekozenLetter) {
+              verkeerde_letter.push(gekozen_letter);
+              document.getElementById("verkeerdeLetters").innerHTML =
+                verkeerde_letter.toString();
+              updateLives();
+            }
+          }
+          return chr;
+        });
+
+        document.getElementById("teradenwoord").innerHTML =
+          geradenWoordArray.join(" ");
+
+        console.log(document.getElementById("teradenwoord"));
+
+        console.log("empty", categories);
+
+        const woord_is_ingevuld = !geradenWoordArray.includes("_");
+        const alle_woorden_gespeeld = categories.length == 0;
+        const nog_woorden_te_spelen = !alle_woorden_gespeeld;
+        console.log(!alle_woorden_gespeeld);
+
+        if (woord_is_ingevuld && categories.length !== 0) {
+          document.getElementById("teradenwoord2").innerHTML =
+            geradenWoordArray.join(" ");
+          if (!categories.length == 0) {
+            document.getElementById("ifNext").showModal();
+          }
+          categories.splice(categories.indexOf(antwoord), 1);
+
+          console.log("!!", antwoord);
+        }
+
+        if (categories.length == 0) {
+          console.log("hello");
+          document.getElementById("ifWon").showModal();
+          document.getElementById("ifNext").close();
+        }
+      }
+      // Function or updating the live count and to create the poor hangman
+      // when lives are being lost by the player.
+
+      function updateLives() {
+        --lives;
+        document.getElementById("lives").innerHTML = "Levens:" + lives;
+        console.log(lives);
+        switch (lives) {
+          case 11:
+            document.getElementById("galgVoet").style.visibility = "visible";
+            break;
+
+          case 10:
+            document.getElementById("paalGalg").style.visibility = "visible";
+            break;
+
+          case 9:
+            document.getElementById("steunBalk").style.visibility = "visible";
+            break;
+
+          case 8:
+            document.getElementById("balkBoven").style.visibility = "visible";
+            break;
+
+          case 7:
+            document.getElementById("strickGalg").style.visibility = "visible";
+            break;
+
+          case 6:
+            document.getElementById("strickGalg").style.visibility = "visible";
+            break;
+
+          case 5:
+            document.getElementById("hoofd").style.visibility = "visible";
+            break;
+
+          case 4:
+            document.getElementById("torso").style.visibility = "visible";
+            break;
+
+          case 3:
+            document.getElementById("linkerArm").style.visibility = "visible";
+            break;
+
+          case 2:
+            document.getElementById("rechterArm").style.visibility = "visible";
+            break;
+
+          case 1:
+            document.getElementById("linkerBeen").style.visibility = "visible";
+            break;
+
+          case 0:
+            document.getElementById("rechterBeen").style.visibility = "visible";
+            document.getElementById("ifLost").showModal();
+            break;
+        }
+      }
+
+      // For displaying the lives
+      document.getElementById("lives").innerHTML = "Levens:" + lives;
+
+      // The function that gets called when the button, in the nextword popup, is being clicked.
+      // this function pickes the next word to be guessed and creates the underscores.
+      // Plus it wipes the wrong letters from the wrong letters array.
+
+      function nextWord() {
+        document.getElementById("verkeerdeLetters").innerHTML = "";
+
+        antwoord = categories[random()];
+        geradenWoordArray = new Array(antwoord.length).fill("_");
+        document.getElementById("teradenwoord").innerHTML =
+          geradenWoordArray.join(" ");
+        console.log("Hey!", categories);
+        console.log("Hey!", antwoord);
+        if (antwoord !== undefined) {
+          console.log("index", categories.indexOf(antwoord));
+          switch (antwoord) {
+            case "paard":
+              document.getElementById("hint").innerHTML =
+                "In de middeleeuwen hadden we dit dier vaak nodig";
+              break;
+            case "hond":
+              document.getElementById("hint").innerHTML =
+                "Het is een huisdier waar je mee kunt gaan wandelen";
+              break;
+            case "kat":
+              document.getElementById("hint").innerHTML =
+                "Het is een eigenwijs huisdier";
+              break;
+            case "aap":
+              document.getElementById("hint").innerHTML =
+                "Dit dier klimpt in de bomen";
+              break;
+            case "aubergine":
+              document.getElementById("hint").innerHTML =
+                "Een langwerpige kromme vrucht";
+              break;
+            case "meloen":
+              document.getElementById("hint").innerHTML =
+                "Een grote waterige vrucht";
+              break;
+            case "kiwi":
+              document.getElementById("hint").innerHTML =
+                "Kleine groene haarige vrucht";
+              break;
+            case "muur":
+              document.getElementById("hint").innerHTML =
+                "Het plafond wordt ondersteunt door ....";
+              break;
+            case "ogen":
+              document.getElementById("hint").innerHTML =
+                "Iedereen heeft er twee van";
+              break;
+            case "raam":
+              document.getElementById("hint").innerHTML = "Er zit glas in";
+              break;
+            case "deur":
+              document.getElementById("hint").innerHTML =
+                "Je opent het om ergens naar binnen te gaan";
+              break;
+            case "steen":
+              document.getElementById("hint").innerHTML =
+                "Ze liggen in een beek";
+              break;
+            case "mountainbike":
+              document.getElementById("hint").innerHTML =
+                "Men kan er op fietsen";
+              break;
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
