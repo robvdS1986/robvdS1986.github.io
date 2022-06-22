@@ -75,18 +75,12 @@
       /* colors, sizes, positions etc. of all the divs*/
 
       .wrapper {
+        padding-left: 20%;
+        padding-right: 20%;
         display: flex;
         flex-wrap: wrap;
-        /* grid:
-          
-          "hangdanny hangdanny hangdanny hangdanny hinttitel "
-          "hangdanny hangdanny hangdanny hangdanny hint "
-          "hangdanny hangdanny hangdanny hangdanny verkeerdeInvoer "
-          "hangdanny hangdanny hangdanny hangdanny verkeerdeLetters "
-          "hangdanny hangdanny hangdanny hangdanny lives "
-          " l posButtons posButtons posButtons posButtons ";
-        grid-gap: 7px;
-        width: 1800px; */
+        flex-direction:row;
+        
       }
 
       #hoofdtitel {
@@ -98,8 +92,7 @@
         /* flex: 100%; */
       }
       #teradenwoord2 {
-        flex: 100%;
-        margin: 0 auto;
+        flex: 30%;
       }
       #teradenwoord {
         text-align: center;
@@ -108,56 +101,64 @@
         font-size: 3em;
         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
           sans-serif;
-        margin: 0 auto;
+        
         flex: 100%;
       }
       /* 
       #vLetter { 
         position: absolute;
       } */
-
+      
       #verkeerdeLetters {
-        grid-area: verkeerdeLetters;
-        flex: 20%;
+        
+        flex: 50%;
         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-          sans-serif;
+        sans-serif;
         background-color: white;
         border: black solid 1px;
-        width: 100px;
-        height: 50px;
+        max-width: 60px;
+        max-height: 60px;
         word-wrap: break-word;
       }
-
+      
+      #verkeerdeInvoer {
+        grid-area: verkeerdeInvoer;
+        position: relative;
+        flex: 50%;
+        color: #fff;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+      }
       #lives {
         grid-area: lives;
         position: relative;
-        flex: 20%;
+        flex: 100%;
         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
           sans-serif;
         background-color: white;
         border: black solid 1px;
-        width: 70px;
-        height: fit-content;
-        margin-bottom: 5%;
+        max-width: 70px;
+        height: 20px;
+       
       }
 
       #posButtons {
         display: inline-block;
         grid-area: posButtons;
         text-align: center;
-        width: 800px;
-        margin: 0 auto;
-        flex: 100%;
+        width: 100%;
+        
+        
       }
 
       #hangdanny {
         grid-area: hangdanny;
-        margin-left: 700px;
+        
         width: 500px;
         height: 500px;
         color: white;
         border: black solid 1px;
-        flex: 80%;
+        flex: 2%;
         background-color: white;
         padding: 15px;
       }
@@ -168,7 +169,7 @@
         margin-right: 250px;
         color: #fff;
         width: 400px;
-        flex: 20%;
+        flex: 50%;
         padding: 5px;
         text-align: left;
         font-size: 1.5em;
@@ -179,15 +180,7 @@
       #hinttitel {
         grid-area: hinttitel;
         position: relative;
-        flex: 20%;
-        color: #fff;
-        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-          sans-serif;
-      }
-      #verkeerdeInvoer {
-        grid-area: verkeerdeInvoer;
-        position: relative;
-        flex: 20%;
+        flex: 100%;
         color: #fff;
         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
           sans-serif;
