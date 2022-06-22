@@ -75,8 +75,9 @@
       /* colors, sizes, positions etc. of all the divs*/
 
       .wrapper {
-        display: grid;
-        grid:
+        display: flex;
+        flex-wrap: wrap;
+        /* grid:
           
           "hangdanny hangdanny hangdanny hangdanny hinttitel "
           "hangdanny hangdanny hangdanny hangdanny hint "
@@ -85,7 +86,7 @@
           "hangdanny hangdanny hangdanny hangdanny lives "
           " l posButtons posButtons posButtons posButtons ";
         grid-gap: 7px;
-        width: 1800px;
+        width: 1800px; */
       }
 
       #hoofdtitel {
@@ -94,9 +95,10 @@
         font-size: 4em;
         color: #fff;
         text-align: center;
+        /* flex: 100%; */
       }
       #teradenwoord2 {
-        
+        flex: 100%;
         margin: 0 auto;
       }
       #teradenwoord {
@@ -107,6 +109,7 @@
         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
           sans-serif;
         margin: 0 auto;
+        flex: 100%;
       }
       /* 
       #vLetter { 
@@ -115,6 +118,7 @@
 
       #verkeerdeLetters {
         grid-area: verkeerdeLetters;
+        flex: 20%;
         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
           sans-serif;
         background-color: white;
@@ -127,7 +131,7 @@
       #lives {
         grid-area: lives;
         position: relative;
-
+        flex: 20%;
         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
           sans-serif;
         background-color: white;
@@ -143,6 +147,7 @@
         text-align: center;
         width: 800px;
         margin: 0 auto;
+        flex: 100%;
       }
 
       #hangdanny {
@@ -152,7 +157,7 @@
         height: 500px;
         color: white;
         border: black solid 1px;
-
+        flex: 80%;
         background-color: white;
         padding: 15px;
       }
@@ -163,7 +168,7 @@
         margin-right: 250px;
         color: #fff;
         width: 400px;
-
+        flex: 20%;
         padding: 5px;
         text-align: left;
         font-size: 1.5em;
@@ -174,7 +179,7 @@
       #hinttitel {
         grid-area: hinttitel;
         position: relative;
-
+        flex: 20%;
         color: #fff;
         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
           sans-serif;
@@ -182,7 +187,7 @@
       #verkeerdeInvoer {
         grid-area: verkeerdeInvoer;
         position: relative;
-
+        flex: 20%;
         color: #fff;
         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
           sans-serif;
