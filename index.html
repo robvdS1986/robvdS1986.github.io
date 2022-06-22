@@ -75,12 +75,11 @@
       /* colors, sizes, positions etc. of all the divs*/
 
       .wrapper {
-        padding-left: 10%;
-        padding-right: 10%;
+        width: 700px;
         display: flex;
         flex-wrap: wrap;
         flex-direction:row;
-        
+        margin: 0 auto;
       }
 
       #hoofdtitel {
@@ -98,7 +97,7 @@
         text-align: center;
         color: #fff;
         padding-bottom: 50px;
-        font-size: 3em;
+        font-size: 4em;
         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
           sans-serif;
         
@@ -111,7 +110,7 @@
       
       #verkeerdeLetters {
         
-        flex: 20%;
+        flex: 10%;
         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
         sans-serif;
         background-color: white;
@@ -122,12 +121,13 @@
       }
       
       #verkeerdeInvoer {
-        grid-area: verkeerdeInvoer;
+        
         position: relative;
-        flex: 20%;
+        flex: 10%;
         color: #fff;
         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
           sans-serif;
+        
       }
       #lives {
         grid-area: lives;
@@ -140,7 +140,7 @@
         max-width: 70px;
         height: 20px;
        margin-right: 40%;
-       margin-left: 10%;
+      
       }
 
       #posButtons {
@@ -155,31 +155,32 @@
       #hangdanny {
         grid-area: hangdanny;
         
-        width: 500px;
-        height: 500px;
+        max-width: 700px;
+        height: 700px;
         color: white;
         border: black solid 1px;
         flex: 2%;
         background-color: white;
         padding: 15px;
+        margin: 0 auto;
       }
 
       #hint {
         grid-area: hint;
         position: relative;
-        margin-right: 250px;
+        
         color: #fff;
         width: 400px;
         flex: 50%;
         padding: 5px;
-        text-align: left;
+        
         font-size: 1.5em;
         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
           sans-serif;
       }
 
       #hinttitel {
-        grid-area: hinttitel;
+       
         position: relative;
         flex: 100%;
         color: #fff;
@@ -452,10 +453,10 @@
       </div>
 
       <h1 id="hinttitel">Hint:</h1>
-
+      
       <p id="hint"></p>
-
       <h1 id="verkeerdeInvoer">Verkeerde letters:</h1>
+
       <p id="verkeerdeLetters"></p>
 
       <p id="lives"></p>
