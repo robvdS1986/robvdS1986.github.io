@@ -75,7 +75,7 @@
       /* colors, sizes, positions etc. of all the divs*/
 
       .wrapper {
-        width: 1000px;
+        width: 1020px;
         display: flex;
         flex-wrap: wrap;
 
@@ -152,7 +152,7 @@
 
       #hangdanny {
         
-        min-width: 950px;
+        min-width: 980px;
         height: 950px;
         padding: 7px;
         color: white;
@@ -192,58 +192,58 @@
         visibility: hidden;
         position: absolute;
         margin-top: 30px;
-        margin-left: 183px;
+        margin-left: 363px;
       }
 
       #hoofdIMG {
-        width: 49.3px;
-        height: 50px;
+        width: 149.3px;
+        height: 150px;
       }
 
       #linkerArm {
         visibility: hidden;
         position: absolute;
-        margin-top: 80px;
-        margin-left: 240px;
+        margin-top: 170px;
+        margin-left: 520px;
       }
 
       #linkerArmIMG {
-        width: 21.3px;
-        height: 101.5px;
+        width: 81.3px;
+        height: 231.5px;
       }
 
       #rechterArm {
         visibility: hidden;
         position: absolute;
-        margin-top: 80px;
-        margin-left: 149.5px;
+        margin-top: 175px;
+        margin-left: 235px;
       }
 
       #rechterArmIMG {
-        width: 39.3px;
-        height: 93.5px;
+        width: 141.3px;
+        height: 261.5px;
       }
 
       #torso {
         visibility: hidden;
         position: absolute;
-        margin-top: 80px;
-        margin-left: 188px;
+        margin-top: 180px;
+        margin-left: 375px;
       }
 
       #torsoIMG {
-        width: 52.1px;
-        height: 86.1px;
+        width: 152.1px;
+        height: 186.1px;
       }
       #linkerBeen {
         visibility: hidden;
         position: absolute;
-        margin-left: 213px;
-        margin-top: 162px;
+        margin-left: 433px;
+        margin-top: 362px;
       }
       #linkerBeenIMG {
-        width: 42px;
-        height: 117.7px;
+        width: 152px;
+        height: 357.7px;
       }
 
       #rechterBeen {
@@ -253,8 +253,8 @@
         margin-top: 162px;
       }
       #rechterBeenIMG {
-        width: 44.6px;
-        height: 128.2px;
+        width: 144.6px;
+        height: 228.2px;
       }
 
       #paalGalg {
@@ -265,8 +265,8 @@
       }
 
       #paalGalgIMG {
-        width: 9.8px;
-        height: 330px;
+        width: 39.8px;
+        height: 830px;
       }
 
       #balkBoven {
@@ -277,44 +277,44 @@
       }
 
       #balkBovenIMG {
-        width: 72.3px;
-        height: 9.3px;
+        width: 362.3px;
+        height: 35.3px;
       }
 
       #galgVoet {
         visibility: hidden;
         position: absolute;
-        margin-top: 338px;
-        margin-left: 119px;
+        margin-top: 820px;
+        margin-left: 100px;
       }
 
       #galgVoetIMG {
-        width: 162.3px;
-        height: 9.3px;
+        width: 362.3px;
+        height: 35.3px;
       }
 
       #steunBalk {
         visibility: hidden;
         position: absolute;
-        margin-top: 20px;
-        margin-left: 150px;
+        margin-top: 35px;
+        margin-left: 175px;
       }
 
       #steunBalkIMG {
-        width: 32.9px;
-        height: 35.3px;
+        width: 162.9px;
+        height: 165.3px;
       }
 
       #strickGalg {
         visibility: hidden;
         position: absolute;
-        margin-left: 190px;
+        margin-left: 390px;
         margin-top: 20px;
       }
 
       #strickGalgIMG {
-        width: 18.9px;
-        height: 47.4px;
+        width: 78.9px;
+        height: 147.4px;
       }
     </style>
     <!-- costum pop-ups: ifwon, iflost, ifnext and skull gif when you lose -->
@@ -528,7 +528,7 @@
 
       // player lives.
 
-      let lives = 12;
+      let lives = 11;
 
       // function to pick the word (at random) to be guessed and a switch
       // to display the right hint to help the player guess
@@ -676,24 +676,21 @@
         document.getElementById("lives").innerHTML = "Levens:" + " " + lives;
         console.log(lives);
         switch (lives) {
-          case 11:
+          
+          case 10:
             document.getElementById("galgVoet").style.visibility = "visible";
             break;
 
-          case 10:
+          case 9:
             document.getElementById("paalGalg").style.visibility = "visible";
             break;
 
-          case 9:
+          case 8:
             document.getElementById("steunBalk").style.visibility = "visible";
             break;
 
-          case 8:
-            document.getElementById("balkBoven").style.visibility = "visible";
-            break;
-
           case 7:
-            document.getElementById("strickGalg").style.visibility = "visible";
+            document.getElementById("balkBoven").style.visibility = "visible";
             break;
 
           case 6:
