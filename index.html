@@ -78,14 +78,9 @@
         width: 1020px;
         display: flex;
         flex-wrap: wrap;
-
-       
-        
       }
 
-      p {
-        font-size: 2em;
-      }
+      
 
       #hoofdtitel {
         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
@@ -101,7 +96,7 @@
       #teradenwoord {
         color: #fff;
         padding-bottom: 50px;
-        font-size: 4em;
+        font-size: 3em;
         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
           sans-serif;
         margin: 0 auto;
@@ -115,6 +110,7 @@
         flex: 20%;
         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
           sans-serif;
+        font-size: 2.75em;
         min-width: 60px;
         max-width: 90px;
         height: 90px;
@@ -124,10 +120,10 @@
       #verkeerdeInvoer {
         padding-left: 15px;
         position: relative;
-
         color: #fff;
         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
           sans-serif;
+        font-size: 3em;
       }
       #lives {
         position: relative;
@@ -135,6 +131,7 @@
         font-weight: bold;
         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
           sans-serif;
+        font-size: 3em;
         width: fit-content;
         height: fit-content;
         margin-left: 10px;
@@ -151,7 +148,6 @@
       }
 
       #hangdanny {
-        
         min-width: 980px;
         height: 950px;
         padding: 7px;
@@ -159,21 +155,16 @@
         border: black solid 1px;
 
         background-color: white;
-
-        
       }
 
       #hint {
         flex: 5%;
         min-width: 900px;
-
         position: relative;
-
         color: #fff;
-        width: 400px;
-
         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
           sans-serif;
+        font-size: 2.5em;
       }
 
       #hinttitel {
@@ -184,6 +175,7 @@
         color: #fff;
         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
           sans-serif;
+        font-size: 3em;
       }
 
       /* All the style values of the images*/
@@ -217,12 +209,12 @@
         visibility: hidden;
         position: absolute;
         margin-top: 175px;
-        margin-left: 235px;
+        margin-left: 275px;
       }
 
       #rechterArmIMG {
-        width: 141.3px;
-        height: 261.5px;
+        width: 106.3px;
+        height: 241.5px;
       }
 
       #torso {
@@ -677,7 +669,6 @@
         document.getElementById("lives").innerHTML = "Levens:" + " " + lives;
         console.log(lives);
         switch (lives) {
-          
           case 10:
             document.getElementById("galgVoet").style.visibility = "visible";
             break;
