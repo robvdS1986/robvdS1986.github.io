@@ -6,7 +6,7 @@
 
     <style>
       /* background color of entire game. */
-      body {
+      html {
         background-color: lightgray;
       }
 
@@ -73,18 +73,18 @@
 
       /* colors, sizes, positions etc. of all the divs*/
 
-      .wrapper {
+      /* .wrapper {
         width: 1020px;
-      }
+      } */
 
       * {
         box-sizing: border-box;
+        
       }
 
       #hoofdtitel {
         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
           sans-serif;
-        font-size: 4em;
         color: #fff;
         text-align: center;
         margin: 0 auto;
@@ -96,14 +96,14 @@
       #teradenwoord {
         color: #fff;
         padding-bottom: 50px;
-        font-size: 4em;
         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
         sans-serif;
         text-align: center;
+        font-size: 4em;
       }
       .infoplayer {
         display: grid;
-        grid-template-columns: 150px 550px 100px ;
+        grid-template-columns: 190px 400px auto;
         grid-template-rows: auto auto auto;
       }
 
@@ -111,7 +111,9 @@
         width: 75%;
         height: 30px;
         color: #fff;
-        font-size: 2.25em;
+        font-size: 2.5em;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
       }
 
       #verkeerdeInvoer {
@@ -121,18 +123,25 @@
         color: #fff;
         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
           sans-serif;
-        font-size: 2.5em;
+          font-size: 3em;
       }
+
+      #livestitel {
+        position: relative;
+        min-width: 40%;
+        color: #fff;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        font-size: 3em;
+      }
+
       #lives {
-        width: 75%;
         position: relative;
         color: #fff;
         font-weight: bold;
         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
           sans-serif;
-        font-size: 2.5em;
-        width: fit-content;
-        height: fit-content;
+        font-size: 2.5em; 
       }
 
       #posButtons {
@@ -159,10 +168,10 @@
         position: relative;
 
         color: #fff;
-
+        font-size: 2.5em;
         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
           sans-serif;
-        font-size: 2.5em;
+        
       }
 
       #hinttitel {
@@ -333,7 +342,7 @@
     the hangman drawingarea(including the hidden images), 
     the hint, the wrong letters, the lives and all the buttons-->
 
-    <div class="wrapper">
+    
       <h1 id="hoofdtitel">Galgje</h1>
       <div id="teradenwoord"></div>
       <div id="hangdanny">
@@ -441,11 +450,17 @@
       <h1 id="hinttitel">Hint:</h1>
 
       <p id="hint"></p>
+      <div>
       <h1 id="verkeerdeInvoer">Verkeerde letters:</h1>
 
       <p id="verkeerdeLetters"></p>
 
+    </div>
+    
+      <h1 id="livestitel">Levens:</h1>
       <p id="lives"></p>
+    
+    
     </div>
       <!-- Buttons to input the players guesses-->
       <!-- Inside a div-->
@@ -479,7 +494,7 @@
         <button id="letterZ">Z</button>
       </div>
     
-    </div>
+    
 
     <script>
       // Array containing the words to be guessed
@@ -663,7 +678,7 @@
 
       function updateLives() {
         --lives;
-        document.getElementById("lives").innerHTML = "Levens:" + " " + lives;
+        document.getElementById("lives").innerHTML = lives;
         console.log(lives);
         switch (lives) {
           case 10:
@@ -714,7 +729,7 @@
       }
 
       // For displaying the lives
-      document.getElementById("lives").innerHTML = "Levens:" + " " + lives;
+      document.getElementById("lives").innerHTML = lives;
 
       // The function that gets called when the button, in the nextword popup, is being clicked.
       // this function pickes the next word to be guessed and creates the underscores.
