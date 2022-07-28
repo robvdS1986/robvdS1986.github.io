@@ -77,10 +77,10 @@
         width: 1020px;
       } */
 
-      * {
+      /* * {
         box-sizing: border-box;
         
-      }
+      } */
 
       #hoofdtitel {
         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
@@ -90,6 +90,11 @@
         text-align: center;
         margin: 0 auto;
       }
+
+      .titelbox {
+        width: 100%;
+      }
+
       #teradenwoord2 {
         text-align: center;
         
@@ -105,14 +110,14 @@
       .infoplayer {
         display: grid;
         grid-template-columns: 190px 400px auto;
-        grid-template-rows: auto auto auto;
+        grid-template-rows: auto auto auto 200px 140px;
       }
 
       #verkeerdeLetters {
         width: 75%;
         height: 30px;
         color: #fff;
-        font-size: 2.5rem;
+        
         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
           sans-serif;
       }
@@ -124,25 +129,27 @@
         color: #fff;
         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
           sans-serif;
-          font-size: 3rem;
+          
       }
 
       #livestitel {
-        position: relative;
-        min-width: 40%;
+        
+        width: fit-content;
         color: #fff;
         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
           sans-serif;
-        font-size: 3rem;
+        
       }
 
+
+
       #lives {
-        position: relative;
+        
         color: #fff;
         font-weight: bold;
         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
           sans-serif;
-        font-size: 2.5rem; 
+         
       }
 
       #posButtons {
@@ -153,7 +160,7 @@
       }
 
       #hangdanny {
-        min-width: 1010px;
+        width: 1010px;
         height: 950px;
         color: white;
         border: black solid 1px;
@@ -162,16 +169,25 @@
 
       #hint {
         width: 100%;
-        position: relative;
+       
         color: #fff;
-        font-size: 2.5rem;
+        
         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
           sans-serif;
         
       }
 
+      h2 {
+        font-size: 35px;
+      }
+
+      p {
+        
+        font-size: 30px;
+      }
+
       #hinttitel {
-        position: relative;
+        
         min-width: 40%;
         color: #fff;
         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
@@ -339,7 +355,10 @@
     the hint, the wrong letters, the lives and all the buttons-->
 
     
-      <h1 id="hoofdtitel">Galgje</h1>
+    <div class="infoplayer">  
+    <div class="titelbox">  
+    <h1 id="hoofdtitel">Galgje</h1>
+  </div>
       <div id="teradenwoord"></div>
       <div id="hangdanny">
         <div id="hoofd">
@@ -442,18 +461,18 @@
           />;
         </div>
       </div>
-      <div class="infoplayer">
-      <h1 id="hinttitel">Hint:</h1>
+      
+      <h2 id="hinttitel">Hint:</h2>
 
       <p id="hint"></p>
       <div>
-      <h1 id="verkeerdeInvoer">Verkeerde letters:</h1>
+      <h2 id="verkeerdeInvoer">Verkeerde letters:</h2>
 
       <p id="verkeerdeLetters"></p>
 
     </div>
     
-      <h1 id="livestitel">Levens:</h1>
+      <h2 id="livestitel">Levens:</h2>
       <p id="lives"></p>
     
     
