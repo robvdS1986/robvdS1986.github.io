@@ -63,7 +63,6 @@
       }
       #ifLost {
         text-align: center;
-
         font: 1em sans-serif;
         background-color: lightblue;
         color: seagreen;
@@ -76,13 +75,10 @@
 
       .wrapper {
         width: 1020px;
-        display: flex;
-        flex-wrap: wrap;
       }
 
-      p {
-        flex: 25%;
-        font-size: 2rem;
+      * {
+        box-sizing: border-box;
       }
 
       #hoofdtitel {
@@ -91,53 +87,56 @@
         font-size: 4em;
         color: #fff;
         text-align: center;
-        flex: 100%;
+        margin: 0 auto;
       }
       #teradenwoord2 {
-        margin: 0 auto;
+        text-align: center;
+        
       }
       #teradenwoord {
         color: #fff;
         padding-bottom: 50px;
         font-size: 4em;
         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-          sans-serif;
-        margin: 0 auto;
+        sans-serif;
+        text-align: center;
+      }
+      .infoplayer {
+        display: grid;
+        grid-template-columns: 150px 550px 100px ;
+        grid-template-rows: auto auto auto;
       }
 
       #verkeerdeLetters {
-        flex: 20%;
-        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-          sans-serif;
-        min-width: 60px;
-        max-width: 90px;
-        height: 90px;
-        word-wrap: break-word;
+        width: 75%;
+        height: 30px;
+        color: #fff;
+        font-size: 2.25em;
       }
 
       #verkeerdeInvoer {
+        width: 100%;
         padding-left: 15px;
         position: relative;
-
         color: #fff;
         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
           sans-serif;
+        font-size: 2.5em;
       }
       #lives {
+        width: 75%;
         position: relative;
         color: #fff;
         font-weight: bold;
         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
           sans-serif;
+        font-size: 2.5em;
         width: fit-content;
         height: fit-content;
-        margin-left: 10px;
       }
 
       #posButtons {
-        flex: 20%;
-        max-width: 900px;
-        min-width: 800px;
+        width: 1000px;
         padding-left: 60px;
         padding-right: 60px;
 
@@ -145,7 +144,7 @@
       }
 
       #hangdanny {
-        min-width: 960px;
+        min-width: 1010px;
         height: 950px;
 
         color: white;
@@ -155,8 +154,7 @@
       }
 
       #hint {
-        flex: 5%;
-        min-width: 900px;
+        width: 100%;
 
         position: relative;
 
@@ -164,16 +162,16 @@
 
         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
           sans-serif;
+        font-size: 2.5em;
       }
 
       #hinttitel {
         position: relative;
-        flex: 1%;
         min-width: 40%;
-        padding: 0 4px;
         color: #fff;
         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
           sans-serif;
+        font-size: 3em;
       }
 
       /* All the style values of the images*/
@@ -439,7 +437,7 @@
           />;
         </div>
       </div>
-
+      <div class="infoplayer">
       <h1 id="hinttitel">Hint:</h1>
 
       <p id="hint"></p>
@@ -448,7 +446,7 @@
       <p id="verkeerdeLetters"></p>
 
       <p id="lives"></p>
-
+    </div>
       <!-- Buttons to input the players guesses-->
       <!-- Inside a div-->
 
@@ -480,6 +478,7 @@
         <button id="letterY">Y</button>
         <button id="letterZ">Z</button>
       </div>
+    
     </div>
 
     <script>
