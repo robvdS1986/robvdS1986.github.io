@@ -28,26 +28,39 @@
       }
 
       /* pointer-events of the game */
+      /* font-size, :hover and :focus for the buttons  */
 
       div {
         pointer-events: none;
       }
+      
+      
+      
       button {
         pointer-events: auto;
+        font-size: 4rem;
+        width: 105px;
+        height: 105px;
+       
       }
-
-      /* font-size, :hover and :focus for the buttons  */
-
-      button {
-        font-size: 3rem;
-      }
-
+      
       button:hover {
         background-color: orange;
       }
-
+      
       button:focus {
         background-color: red;
+      }
+      #posButtons {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto auto auto;
+        
+       
+        text-align: center;
+        width: 1110px;
+        height: 380px;
+        padding-top: 20px;
       }
 
       /* style of dialog pop-up's */
@@ -92,7 +105,12 @@
       }
 
       .titelbox {
-        width: 100%;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto;
+        
+        margin: 0 auto;
+       
       }
 
       #teradenwoord2 {
@@ -105,12 +123,14 @@
         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
         sans-serif;
         text-align: center;
-        font-size: 4rem;
+        font-size: 5em;
       }
       .infoplayer {
         display: grid;
-        grid-template-columns: 190px 400px auto;
-        grid-template-rows: auto auto auto 200px 140px;
+        grid-template-columns: 700px 330px;
+        grid-template-rows:  300px;
+        width: 1280px;
+        margin: 0 auto;
       }
 
       #verkeerdeLetters {
@@ -132,6 +152,10 @@
           
       }
 
+      #liveblock {
+        width: 400px;
+      }
+
       #livestitel {
         
         width: fit-content;
@@ -149,24 +173,32 @@
         font-weight: bold;
         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
           sans-serif;
-         
+        margin-left: 200px;
+        margin-top: -94px; 
       }
 
-      #posButtons {
-        width: 1000px;
-        padding-left: 60px;
-        padding-right: 60px;
-        text-align: center;
-      }
 
       #hangdanny {
-        width: 1010px;
-        height: 950px;
+       width: 1100px;
+        height: 1100px;
         color: white;
         border: black solid 1px;
         background-color: white;
+        margin: 0 auto;
       }
 
+      h2 {
+        font-size: 50px;
+      }
+
+      p {
+        
+        font-size: 45px;
+      }
+
+      #hintblock {
+        width: 700px;
+      }
       #hint {
         width: 100%;
        
@@ -177,14 +209,6 @@
         
       }
 
-      h2 {
-        font-size: 35px;
-      }
-
-      p {
-        
-        font-size: 30px;
-      }
 
       #hinttitel {
         
@@ -192,7 +216,7 @@
         color: #fff;
         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
           sans-serif;
-        font-size: 3rem;
+        
       }
 
       /* All the style values of the images*/
@@ -355,132 +379,135 @@
     the hint, the wrong letters, the lives and all the buttons-->
 
     
-    <div class="infoplayer">  
     <div class="titelbox">  
-    <h1 id="hoofdtitel">Galgje</h1>
-  </div>
+      <h1 id="hoofdtitel">Galgje</h1>
       <div id="teradenwoord"></div>
       <div id="hangdanny">
         <div id="hoofd">
           <img
-            src="hoofd.png"
-            alt="Hoofd"
-            id="hoofdIMG"
-            width="1039px"
-            height="1100px"
+          src="hoofd.png"
+          alt="Hoofd"
+          id="hoofdIMG"
+          width="1039px"
+          height="1100px"
           />;
         </div>
         <div id="torso">
           <img
-            src="torso.png"
-            alt="torso"
-            id="torsoIMG"
-            width="1121px"
-            height="1461px"
+          src="torso.png"
+          alt="torso"
+          id="torsoIMG"
+          width="1121px"
+          height="1461px"
           />;
         </div>
         <div id="linkerArm">
           <img
-            src="linker arm.png"
-            alt="linker arm"
-            id="linkerArmIMG"
-            width="813px"
-            height="1615px"
+          src="linker arm.png"
+          alt="linker arm"
+          id="linkerArmIMG"
+          width="813px"
+          height="1615px"
           />;
         </div>
         <div id="rechterArm">
           <img
-            src="rechter arm.png"
-            alt="rechter arm"
-            id="rechterArmIMG"
-            width="993px"
-            height="1535px"
+          src="rechter arm.png"
+          alt="rechter arm"
+          id="rechterArmIMG"
+          width="993px"
+          height="1535px"
           />;
         </div>
         <div id="linkerBeen">
           <img
-            src="linker been1.png"
-            alt="linker been"
-            id="linkerBeenIMG"
-            width="1120px"
-            height="1877px"
+          src="linker been1.png"
+          alt="linker been"
+          id="linkerBeenIMG"
+          width="1120px"
+          height="1877px"
           />;
         </div>
         <div id="rechterBeen">
           <img
-            src="rechter been.png"
-            alt="rechter been"
-            id="rechterBeenIMG"
-            width="1146px"
-            height="1982px"
+          src="rechter been.png"
+          alt="rechter been"
+          id="rechterBeenIMG"
+          width="1146px"
+          height="1982px"
           />;
         </div>
         <div id="paalGalg">
           <img
-            src="paal galg.png"
-            alt="paal galg"
-            id="paalGalgIMG"
-            width="798px"
-            height="1694px"
+          src="paal galg.png"
+          alt="paal galg"
+          id="paalGalgIMG"
+          width="798px"
+          height="1694px"
           />;
         </div>
         <div id="balkBoven">
           <img
-            src="balk galg boven.png"
-            alt="balk galg boven"
-            id="balkBovenIMG"
-            width="1423px"
-            height="793px"
+          src="balk galg boven.png"
+          alt="balk galg boven"
+          id="balkBovenIMG"
+          width="1423px"
+          height="793px"
           />;
         </div>
         <div id="galgVoet">
           <img
-            src="balk galg onder.png"
-            alt="balk galg onder"
-            id="galgVoetIMG"
-            width="1423px"
-            height="793px"
+          src="balk galg onder.png"
+          alt="balk galg onder"
+          id="galgVoetIMG"
+          width="1423px"
+          height="793px"
           />;
         </div>
         <div id="steunBalk">
           <img
-            src="steun balk.png"
-            alt="steun balk"
-            id="steunBalkIMG"
-            width="1029px"
-            height="1053px"
+          src="steun balk.png"
+          alt="steun balk"
+          id="steunBalkIMG"
+          width="1029px"
+          height="1053px"
           />;
         </div>
         <div id="strickGalg">
           <img
-            src="strick galg.png"
-            alt="strick galg"
-            id="strickGalgIMG"
-            width="889px"
-            height="1174px"
+          src="strick galg.png"
+          alt="strick galg"
+          id="strickGalgIMG"
+          width="889px"
+          height="1174px"
           />;
         </div>
       </div>
-      
-      <h2 id="hinttitel">Hint:</h2>
-
-      <p id="hint"></p>
-      <div>
+    </div>
+      <div class="infoplayer">  
+        <div id="hintblock">
+        <h2 id="hinttitel">Hint:</h2>
+        
+        <p id="hint"></p>
+      </div>
+        
+          <div id="liveblock">
       <h2 id="verkeerdeInvoer">Verkeerde letters:</h2>
 
       <p id="verkeerdeLetters"></p>
 
-    </div>
     
       <h2 id="livestitel">Levens:</h2>
       <p id="lives"></p>
-    
+    </div>
+    </div>
     
     </div>
       <!-- Buttons to input the players guesses-->
       <!-- Inside a div-->
 
       <div id="posButtons" onclick="clickedLetter(event)">
+       <div> 
         <button id="letterA">A</button>
         <button id="letterB">B</button>
         <button id="letterC">C</button>
@@ -491,6 +518,8 @@
         <button id="letterH">H</button>
         <button id="letterI">I</button>
         <button id="letterJ">J</button>
+      </div>
+      <div>
         <button id="letterK">K</button>
         <button id="letterL">L</button>
         <button id="letterM">M</button>
@@ -500,13 +529,18 @@
         <button id="letterQ">Q</button>
         <button id="letterR">R</button>
         <button id="letterS">S</button>
-        <button id="letterT">T</button>
-        <button id="letterU">U</button>
-        <button id="letterV">V</button>
-        <button id="letterW">W</button>
-        <button id="letterX">X</button>
-        <button id="letterY">Y</button>
-        <button id="letterZ">Z</button>
+      </div>
+     
+      <div>
+      <button id="letterT">T</button>
+      <button id="letterU">U</button>
+      <button id="letterV">V</button>
+      <button id="letterW">W</button>
+      <button id="letterX">X</button>
+      <button id="letterY">Y</button>
+      <button id="letterZ">Z</button>
+      </div>
+      
       </div>
     
     
