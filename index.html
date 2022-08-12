@@ -5,6 +5,207 @@
     <!-- Entire css and positions-->
 
     <style>
+      @media only screen and (min-width: 1024px) {
+
+      .wrapper.wrapper {
+        min-width: 1014px;
+        
+      }
+      
+      #hangdanny#hangdanny {
+        width: 950px;
+        height: 900px;
+        border: black solid 1px;
+        background-color: white;
+        margin-bottom: 600px;
+      }
+      
+      .titelbox.titelbox {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto auto;
+        
+      }
+
+      #titel {
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+        font-size: 80px;
+        color: #fff;
+        margin: 0 auto;
+        padding-top: 30px;
+        padding-bottom: 40px;
+      }
+
+      h2 {
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+        font-size: 80px;
+        color: #fff;
+      }
+
+      p {
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+        font-size: 70px;
+        color: #fff;
+      }
+
+      #teradenwoord#teradenwoord {
+        color: #fff;
+        
+        /* margin-left: 980px; */
+        font-size: 4em;
+       
+
+        
+      }
+
+      #hoofd {
+        visibility: hidden;
+        position: absolute;
+        z-index: 99;
+        margin-top: 30px;
+        margin-left: 363px;
+        padding-top: 20px;
+      }
+
+      #hoofdIMG {
+        width: 149.3px;
+        height: 150px;
+      }
+
+      #linkerArm {
+        visibility: hidden;
+        position: absolute;
+        margin-top: 173px;
+        margin-left: 547px;
+        padding-top: 20px;
+      }
+
+      #linkerArmIMG {
+        width: 66.3px;
+        height: 241.5px;
+      }
+
+      #rechterArm {
+        visibility: hidden;
+        position: absolute;
+        margin-top: 175px;
+        margin-left: 275px;
+        padding-top: 20px;
+      }
+
+      #rechterArmIMG {
+        width: 106.3px;
+        height: 241.5px;
+      }
+
+      #torso {
+        visibility: hidden;
+        position: absolute;
+        margin-top: 180px;
+        margin-left: 375px;
+        padding-top: 20px;
+      }
+
+      #torsoIMG {
+        width: 172.1px;
+        height: 206.1px;
+      }
+      #linkerBeen {
+        visibility: hidden;
+        position: absolute;
+        margin-left: 455px;
+        margin-top: 378px;
+        padding-top: 20px;
+      }
+      #linkerBeenIMG {
+        width: 150px;
+        height: 380px;
+      }
+
+      #rechterBeen {
+        visibility: hidden;
+        position: absolute;
+        margin-left: 308px;
+        margin-top: 378px;
+        padding-top: 20px;
+      }
+      #rechterBeenIMG {
+        width: 150px;
+        height: 380px;
+      }
+
+      #paalGalg {
+        visibility: hidden;
+        position: absolute;
+        margin-top: 20px;
+        margin-left: 140px;
+        padding-top: 20px;
+      }
+
+      #paalGalgIMG {
+        width: 39.8px;
+        height: 830px;
+      }
+
+      #balkBoven {
+        visibility: hidden;
+        position: absolute;
+        margin-top: 6px;
+        margin-left: 140px;
+        padding-top: 20px;
+      }
+
+      #balkBovenIMG {
+        width: 362.3px;
+        height: 35.3px;
+      }
+
+      #galgVoet {
+        visibility: hidden;
+        position: absolute;
+        margin-top: 820px;
+        margin-left: 100px;
+        padding-top: 20px;
+      }
+
+      #galgVoetIMG {
+        width: 362.3px;
+        height: 35.3px;
+      }
+
+      #steunBalk {
+        visibility: hidden;
+        position: absolute;
+        margin-top: 35px;
+        margin-left: 175px;
+        padding-top: 20px;
+      }
+
+      #steunBalkIMG {
+        width: 162.9px;
+        height: 165.3px;
+      }
+
+      #strickGalg {
+        visibility: hidden;
+        position: absolute;
+        margin-left: 390px;
+        margin-top: 20px;
+        padding-top: 20px;
+      }
+
+      #strickGalgIMG {
+        width: 78.9px;
+        height: 147.4px;
+      }
+
+ 
+}
+
+
       /* background color of entire game. */
       html {
         background-color: lightgray;
@@ -15,16 +216,28 @@
       a {
         width: 30px;
         padding: 0px 8px 5px 8px;
-        background-color: lightblue;
+        background-color: lightgray;
         color: seagreen;
-        border: lightseagreen outset 1px;
+        border: lightseagreen outset 1px; 
         text-decoration: none;
+        font-size: 5em;
+        padding-bottom: 30px;
+        
       }
 
       #Reset {
-        position: absolute;
+        position: relative;
         display: block;
-        margin-left: 172px;
+        width: 170px;
+        height: 70px;
+        text-align: center;
+        margin-top: 30px;
+        margin-left: 300px;
+        margin-bottom: 30px;
+
+       
+        
+        
       }
 
       /* pointer-events of the game */
@@ -57,7 +270,7 @@
         grid-template-columns: auto;
         grid-template-rows: auto auto auto auto auto;
         
-       
+       margin-top: 130px;
         text-align: center;
         width: 1110px;
         height: 380px;
@@ -68,21 +281,22 @@
 
       #ifWon {
         text-align: center;
-        font: 0.8rem sans-serif;
+        
         background-color: lightblue;
         color: seagreen;
-        width: 400px;
-        height: 160px;
-        margin-bottom: 750px;
+        width: 800px;
+        height: 520px;
+       
+       
       }
       #ifLost {
         text-align: center;
-        font: 1rem sans-serif;
+       
         background-color: lightblue;
         color: seagreen;
-        width: 400px;
-        height: 160px;
-        margin-bottom: 750px;
+        width: 800px;
+        height: 520px;
+        
       }
 
       /* colors, sizes, positions etc. of all the divs*/
@@ -92,20 +306,6 @@
         
       }
 
-      /* * {
-        box-sizing: border-box;
-        
-      } */
-
-      #hoofdtitel {
-        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-          sans-serif;
-        color: #fff;
-        text-align: center;
-        text-shadow: 2px 2px 5px black;
-        
-      }
-      
       .titelbox,.infoplayer,#posButtons  {
         padding-left: 170px;
         padding-right: 170px;
@@ -117,121 +317,88 @@
         grid-template-columns: auto;
         grid-template-rows: auto auto auto;
         
-        margin: auto 0;
-        
       }
       
       #teradenwoord2 {
         text-align: center;
-        
       }
+
       #teradenwoord {
         color: #fff;
         padding-bottom: 50px;
-        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-        sans-serif;
         text-align: center;
         font-size: 7.5em;
         padding-bottom: 100px;
       }
+
       .infoplayer {
         display: grid;
         grid-template-columns: 700px 330px;
         grid-template-rows:  300px;
         width: 1280px;
-        margin: 0 auto;
-        padding-top: 30px;
+       
         padding-bottom: 30px;
+        
       }
       
-      #verkeerdeLetters {
-        width: 75%;
-        height: 30px;
-        color: #fff;
-        
-        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-        sans-serif;
-      }
       
       #verkeerdeInvoer {
+        
         width: 100%;
-        padding-left: 15px;
-        position: relative;
-        color: #fff;
-        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-        sans-serif;
         
+        padding-left: 15px; 
       }
-      
-      #liveblock {
-        width: 400px;
+      #livebox {
+        display: block;
+        padding-top: 120px;
+        width: 100px;
+        height: 10px;
       }
-      
-      #livestitel {
-        
-        width: fit-content;
-        color: #fff;
-        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-        sans-serif;
-        
-      }
-      
-      
-      
+           
       #lives {
-        
-        color: #fff;
+        display: block;
         font-weight: bold;
-        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-        sans-serif;
-        margin-left: 220px;
-        margin-top: -124px; 
+        padding-bottom: 70px;
+        margin-left: 260px;
+        margin-top: -150px;
       }
       
       
       #hangdanny {
         width: 1100px;
-        height: 1100px;
-        color: white;
+        height: 950px;
         border: black solid 1px;
         background-color: white;
-        margin: 0 auto;
       }
       
+      
+
       h1 {
-        font-size: 8em;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+        font-size: 140px;
+        color: #fff;
+        margin: 0 auto;
+        padding-top: 40px;
       }
 
       h2 {
-        font-size: 4em;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+        font-size: 80px;
+        color: #fff;
       }
 
       p {
-        
-        font-size: 3.75em;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+        font-size: 70px;
+        color: #fff;
       }
 
       #hintblock {
         width: 700px;
-      }
-      #hint {
-        width: 100%;
-       
-        color: #fff;
-        
-        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-          sans-serif;
-        
-      }
-
-
-      #hinttitel {
-        
-        min-width: 40%;
-        color: #fff;
-        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-          sans-serif;
-        
+        color: #fff;  
       }
 
       /* All the style values of the images*/
@@ -242,6 +409,7 @@
         z-index: 99;
         margin-top: 30px;
         margin-left: 363px;
+        padding-top: 20px;
       }
 
       #hoofdIMG {
@@ -254,6 +422,7 @@
         position: absolute;
         margin-top: 173px;
         margin-left: 547px;
+        padding-top: 20px;
       }
 
       #linkerArmIMG {
@@ -266,6 +435,7 @@
         position: absolute;
         margin-top: 175px;
         margin-left: 275px;
+        padding-top: 20px;
       }
 
       #rechterArmIMG {
@@ -278,6 +448,7 @@
         position: absolute;
         margin-top: 180px;
         margin-left: 375px;
+        padding-top: 20px;
       }
 
       #torsoIMG {
@@ -289,6 +460,7 @@
         position: absolute;
         margin-left: 455px;
         margin-top: 378px;
+        padding-top: 20px;
       }
       #linkerBeenIMG {
         width: 150px;
@@ -300,6 +472,7 @@
         position: absolute;
         margin-left: 308px;
         margin-top: 378px;
+        padding-top: 20px;
       }
       #rechterBeenIMG {
         width: 150px;
@@ -311,6 +484,7 @@
         position: absolute;
         margin-top: 20px;
         margin-left: 140px;
+        padding-top: 20px;
       }
 
       #paalGalgIMG {
@@ -323,6 +497,7 @@
         position: absolute;
         margin-top: 6px;
         margin-left: 140px;
+        padding-top: 20px;
       }
 
       #balkBovenIMG {
@@ -335,6 +510,7 @@
         position: absolute;
         margin-top: 820px;
         margin-left: 100px;
+        padding-top: 20px;
       }
 
       #galgVoetIMG {
@@ -347,6 +523,7 @@
         position: absolute;
         margin-top: 35px;
         margin-left: 175px;
+        padding-top: 20px;
       }
 
       #steunBalkIMG {
@@ -359,6 +536,7 @@
         position: absolute;
         margin-left: 390px;
         margin-top: 20px;
+        padding-top: 20px;
       }
 
       #strickGalgIMG {
@@ -368,24 +546,24 @@
     </style>
     <!-- costum pop-ups: ifwon, iflost, ifnext and skull gif when you lose -->
     <dialog id="ifWon">
-      <h1>JE HEBT GEWONNEN!!!</h1>
+      <p>JE HEBT GEWONNEN!!!</p>
       <a href="https://robvds1986.github.io/" id="Reset">reset</a>
     </dialog>
 
     <dialog id="ifLost">
-      <h1>JE HEBT VERLOREN!!!</h1>
+      <p>JE HEBT VERLOREN!!!</p>
 
       <img
         src="BareGaseousBarasinga-size_restricted.gif"
         alt="laughing skull"
-        style="width: 60px; height: 60px"
+        style="width: 100px; height: 100px"
       />
       <a href="https://robvds1986.github.io/" id="Reset">reset</a>
     </dialog>
 
     <dialog id="ifNext">
       <form method="dialog">
-        <h1 id="teradenwoord2"></h1>
+        <p id="teradenwoord2"></p>
         <button onclick="nextWord()" id="nextW">Volgend woord</button>
       </form>
     </dialog>
@@ -396,8 +574,8 @@
 
     <div id="wrapper">
     <div class="titelbox">  
-      <h1 id="hoofdtitel">Galgje</h1>
-      <div id="teradenwoord"></div>
+      <h1 id="titel">Galgje</h1>
+      <div></div>
       <div id="hangdanny">
         <div id="hoofd">
           <img
@@ -499,22 +677,24 @@
           />;
         </div>
       </div>
+      <div id="teradenwoord"></div>
     </div>
-      <div class="infoplayer">  
+    <div class="infoplayer">  
         <div id="hintblock">
-        <h2 id="hinttitel">Hint:</h2>
+        <h2>Hint:</h2>
         
         <p id="hint"></p>
       </div>
         
-          <div id="liveblock">
-      <h2 id="verkeerdeInvoer">Verkeerde letters:</h2>
+      <div id="verkeerdeInvoer">
+      <h2>Verkeerde letters:</h2>
 
       <p id="verkeerdeLetters"></p>
-
-    
-      <h2 id="livestitel">Levens:</h2>
+      </div>
+    <div id="livebox">
+      <h2>Levens:</h2>
       <p id="lives"></p>
+    </div>
     </div>
     </div>
     
