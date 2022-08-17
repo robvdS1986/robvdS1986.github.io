@@ -5,214 +5,15 @@
     <!-- Entire css and positions-->
 
     <style>
-      @media only screen and (min-width: 1024px) {
-
-      .wrapper.wrapper {
-        min-width: 1014px;
-        
-      }
       
-      #hangdanny#hangdanny {
-        width: 950px;
-        height: 900px;
-        border: black solid 1px;
-        background-color: white;
-        margin-bottom: 600px;
-      }
       
-      .titelbox.titelbox {
-        display: grid;
-        grid-template-columns: auto auto;
-        grid-template-rows: auto auto auto;
-        
-      }
-
-      #titel {
-        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-        sans-serif;
-        font-size: 80px;
-        color: #fff;
-        margin: 0 auto;
-        padding-top: 30px;
-        padding-bottom: 40px;
-      }
-
-      h2 {
-        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-        sans-serif;
-        font-size: 80px;
-        color: #fff;
-      }
-
-      p {
-        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-        sans-serif;
-        font-size: 70px;
-        color: #fff;
-      }
-
-      #teradenwoord#teradenwoord {
-        color: #fff;
-        
-        /* margin-left: 980px; */
-        font-size: 4em;
-       
-
-        
-      }
-
-      #hoofd {
-        visibility: hidden;
-        position: absolute;
-        z-index: 99;
-        margin-top: 30px;
-        margin-left: 363px;
-        padding-top: 20px;
-      }
-
-      #hoofdIMG {
-        width: 149.3px;
-        height: 150px;
-      }
-
-      #linkerArm {
-        visibility: hidden;
-        position: absolute;
-        margin-top: 173px;
-        margin-left: 547px;
-        padding-top: 20px;
-      }
-
-      #linkerArmIMG {
-        width: 66.3px;
-        height: 241.5px;
-      }
-
-      #rechterArm {
-        visibility: hidden;
-        position: absolute;
-        margin-top: 175px;
-        margin-left: 275px;
-        padding-top: 20px;
-      }
-
-      #rechterArmIMG {
-        width: 106.3px;
-        height: 241.5px;
-      }
-
-      #torso {
-        visibility: hidden;
-        position: absolute;
-        margin-top: 180px;
-        margin-left: 375px;
-        padding-top: 20px;
-      }
-
-      #torsoIMG {
-        width: 172.1px;
-        height: 206.1px;
-      }
-      #linkerBeen {
-        visibility: hidden;
-        position: absolute;
-        margin-left: 455px;
-        margin-top: 378px;
-        padding-top: 20px;
-      }
-      #linkerBeenIMG {
-        width: 150px;
-        height: 380px;
-      }
-
-      #rechterBeen {
-        visibility: hidden;
-        position: absolute;
-        margin-left: 308px;
-        margin-top: 378px;
-        padding-top: 20px;
-      }
-      #rechterBeenIMG {
-        width: 150px;
-        height: 380px;
-      }
-
-      #paalGalg {
-        visibility: hidden;
-        position: absolute;
-        margin-top: 20px;
-        margin-left: 140px;
-        padding-top: 20px;
-      }
-
-      #paalGalgIMG {
-        width: 39.8px;
-        height: 830px;
-      }
-
-      #balkBoven {
-        visibility: hidden;
-        position: absolute;
-        margin-top: 6px;
-        margin-left: 140px;
-        padding-top: 20px;
-      }
-
-      #balkBovenIMG {
-        width: 362.3px;
-        height: 35.3px;
-      }
-
-      #galgVoet {
-        visibility: hidden;
-        position: absolute;
-        margin-top: 820px;
-        margin-left: 100px;
-        padding-top: 20px;
-      }
-
-      #galgVoetIMG {
-        width: 362.3px;
-        height: 35.3px;
-      }
-
-      #steunBalk {
-        visibility: hidden;
-        position: absolute;
-        margin-top: 35px;
-        margin-left: 175px;
-        padding-top: 20px;
-      }
-
-      #steunBalkIMG {
-        width: 162.9px;
-        height: 165.3px;
-      }
-
-      #strickGalg {
-        visibility: hidden;
-        position: absolute;
-        margin-left: 390px;
-        margin-top: 20px;
-        padding-top: 20px;
-      }
-
-      #strickGalgIMG {
-        width: 78.9px;
-        height: 147.4px;
-      }
-
- 
-}
-
-
       /* background color of entire game. */
       html {
         background-color: lightgray;
       }
-
+      
       /* reset the game link design and position */
-
+      
       a {
         width: 30px;
         padding: 0px 8px 5px 8px;
@@ -224,7 +25,7 @@
         padding-bottom: 30px;
         
       }
-
+      
       #Reset {
         position: relative;
         display: block;
@@ -234,8 +35,8 @@
         margin-top: 30px;
         margin-left: 300px;
         margin-bottom: 30px;
-
-       
+        
+        
         
         
       }
@@ -254,6 +55,7 @@
         font-size: 7rem;
         width: 107px;
         height: 118px;
+        background-color: lightgoldenrodyellow;
 
        
       }
@@ -270,7 +72,7 @@
         grid-template-columns: auto;
         grid-template-rows: auto auto auto auto auto;
         
-       margin-top: 130px;
+        margin-top: 130px;
         text-align: center;
         width: 1110px;
         height: 380px;
@@ -279,7 +81,7 @@
 
       /* style of dialog pop-up's */
 
-      #ifWon {
+      #ifWon, #ifLost, #ifNext {
         text-align: center;
         
         background-color: lightblue;
@@ -289,15 +91,14 @@
        
        
       }
-      #ifLost {
-        text-align: center;
-       
-        background-color: lightblue;
-        color: seagreen;
-        width: 800px;
-        height: 520px;
-        
+
+      #nextW {
+        width: fit-content;
+        height: fit-content;
+        background-color: lightcyan;
       }
+
+    
 
       /* colors, sizes, positions etc. of all the divs*/
 
@@ -329,6 +130,7 @@
         text-align: center;
         font-size: 7.5em;
         padding-bottom: 100px;
+        width: 1450px;
       }
 
       .infoplayer {
@@ -354,7 +156,7 @@
         width: 100px;
         height: 10px;
       }
-           
+      
       #lives {
         display: block;
         font-weight: bold;
@@ -372,7 +174,7 @@
       }
       
       
-
+      
       h1 {
         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
         sans-serif;
@@ -380,6 +182,7 @@
         color: #fff;
         margin: 0 auto;
         padding-top: 40px;
+        padding-bottom: 40px;
       }
 
       h2 {
@@ -416,7 +219,7 @@
         width: 149.3px;
         height: 150px;
       }
-
+      
       #linkerArm {
         visibility: hidden;
         position: absolute;
@@ -442,7 +245,7 @@
         width: 106.3px;
         height: 241.5px;
       }
-
+      
       #torso {
         visibility: hidden;
         position: absolute;
@@ -512,7 +315,7 @@
         margin-left: 100px;
         padding-top: 20px;
       }
-
+      
       #galgVoetIMG {
         width: 362.3px;
         height: 35.3px;
@@ -530,7 +333,7 @@
         width: 162.9px;
         height: 165.3px;
       }
-
+      
       #strickGalg {
         visibility: hidden;
         position: absolute;
@@ -543,7 +346,248 @@
         width: 78.9px;
         height: 147.4px;
       }
-    </style>
+      @media only screen and (min-width: 1024px) {
+  
+      .wrapper {
+        min-width: 1014px;
+        
+      }
+  
+     #lives {
+        margin-left: 110px;
+        margin-top: -60px;
+      }
+      
+      #hangdanny {
+        width: 750px;
+        height: 700px;
+        border: black solid 1px;
+        background-color: white;
+        margin-bottom: 600px;
+      }
+      #desktopGegevens{
+        padding-top: 130px;
+      }
+      .playerDesktop {
+        display: grid;
+        grid-template-columns: 760px auto;
+        grid-template-rows: auto auto;
+      }
+  
+      .titelbox {
+        display: grid;
+        grid-template-columns: 750px;
+        grid-template-rows: auto auto auto;
+        
+      }
+  
+      .infoplayer {
+        display: grid;
+        grid-template-columns: 360px 330px;
+        grid-template-rows: 100px 100px;
+        
+        width: 800px;
+       
+       
+      }
+  
+     
+  
+      #posButtons {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto auto auto;
+        
+        margin-left: 680px;
+        margin-top: -1000px;
+        text-align: center;
+        width: 1110px;
+        height: 230px;
+        
+      }
+  
+      #posButtons button {
+        width: 70px;
+        height: 70px;
+        font-size: 2em;
+        text-align: center;
+        
+      }
+  
+      #titel {
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+        font-size: 80px;
+        color: #fff;
+        margin: 0 auto;
+        padding-top: 30px;
+        padding-bottom: 40px;
+      }
+  
+      #hintT,#vLetter,#livesT  {
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+        font-size: 2em;
+        color: #fff;
+      }
+  
+      #hint,#verkeerdeLetters,#lives {
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+        font-size: 1.5em;
+        color: #fff;
+      }
+  
+      #teradenwoord#teradenwoord {
+        color: #fff;
+        font-size: 4em;
+               
+      }
+  
+      #hoofd {
+        visibility: hidden;
+        position: absolute;
+        z-index: 99;
+        margin-top: 30px;
+        margin-left: 363px;
+        padding-top: 20px;
+      }
+  
+      #hoofdIMG {
+        width: 149.3px;
+        height: 150px;
+      }
+  
+      #linkerArm {
+        visibility: hidden;
+        position: absolute;
+        margin-top: 173px;
+        margin-left: 547px;
+        padding-top: 20px;
+      }
+  
+      #linkerArmIMG {
+        width: 66.3px;
+        height: 241.5px;
+      }
+  
+      #rechterArm {
+        visibility: hidden;
+        position: absolute;
+        margin-top: 175px;
+        margin-left: 275px;
+        padding-top: 20px;
+      }
+  
+      #rechterArmIMG {
+        width: 106.3px;
+        height: 241.5px;
+      }
+  
+      #torso {
+        visibility: hidden;
+        position: absolute;
+        margin-top: 180px;
+        margin-left: 375px;
+        padding-top: 20px;
+      }
+  
+      #torsoIMG {
+        width: 172.1px;
+        height: 206.1px;
+      }
+      #linkerBeen {
+        visibility: hidden;
+        position: absolute;
+        margin-left: 455px;
+        margin-top: 378px;
+        padding-top: 20px;
+      }
+      #linkerBeenIMG {
+        width: 150px;
+        height: 380px;
+      }
+  
+      #rechterBeen {
+        visibility: hidden;
+        position: absolute;
+        margin-left: 308px;
+        margin-top: 378px;
+        padding-top: 20px;
+      }
+      #rechterBeenIMG {
+        width: 150px;
+        height: 380px;
+      }
+  
+      #paalGalg {
+        visibility: hidden;
+        position: absolute;
+        margin-top: 20px;
+        margin-left: 140px;
+        padding-top: 20px;
+      }
+  
+      #paalGalgIMG {
+        width: 39.8px;
+        height: 830px;
+      }
+  
+      #balkBoven {
+        visibility: hidden;
+        position: absolute;
+        margin-top: 6px;
+        margin-left: 140px;
+        padding-top: 20px;
+      }
+  
+      #balkBovenIMG {
+        width: 362.3px;
+        height: 35.3px;
+      }
+  
+      #galgVoet {
+        visibility: hidden;
+        position: absolute;
+        margin-top: 820px;
+        margin-left: 100px;
+        padding-top: 20px;
+      }
+  
+      #galgVoetIMG {
+        width: 362.3px;
+        height: 35.3px;
+      }
+  
+      #steunBalk {
+        visibility: hidden;
+        position: absolute;
+        margin-top: 35px;
+        margin-left: 175px;
+        padding-top: 20px;
+      }
+  
+      #steunBalkIMG {
+        width: 162.9px;
+        height: 165.3px;
+      }
+  
+      #strickGalg {
+        visibility: hidden;
+        position: absolute;
+        margin-left: 390px;
+        margin-top: 20px;
+        padding-top: 20px;
+      }
+  
+      #strickGalgIMG {
+        width: 78.9px;
+        height: 147.4px;
+      }
+  
+  
+  }
+      </style>
     <!-- costum pop-ups: ifwon, iflost, ifnext and skull gif when you lose -->
     <dialog id="ifWon">
       <p>JE HEBT GEWONNEN!!!</p>
@@ -573,6 +617,7 @@
 
 
     <div id="wrapper">
+    <div class="playerDesktop">
     <div class="titelbox">  
       <h1 id="titel">Galgje</h1>
       <div></div>
@@ -677,34 +722,34 @@
           />;
         </div>
       </div>
-      <div id="teradenwoord"></div>
     </div>
+    <div id="desktopGegevens">
+    
+    <div id="teradenwoord"></div>
     <div class="infoplayer">  
         <div id="hintblock">
-        <h2>Hint:</h2>
+        <h2 id="hintT">Hint:</h2>
         
         <p id="hint"></p>
       </div>
         
       <div id="verkeerdeInvoer">
-      <h2>Verkeerde letters:</h2>
+      <h2 id="vLetter">Verkeerde letters:</h2>
 
       <p id="verkeerdeLetters"></p>
       </div>
     <div id="livebox">
-      <h2>Levens:</h2>
+      <h2 id="livesT">Levens:</h2>
       <p id="lives"></p>
     </div>
     </div>
     </div>
     
-    </div>
-  </div>
-      <!-- Buttons to input the players guesses-->
-      <!-- Inside a div-->
-
-      <div id="posButtons" onclick="clickedLetter(event)">
-       <div> 
+    <!-- Buttons to input the players guesses-->
+    <!-- Inside a div-->
+    
+    <div id="posButtons" onclick="clickedLetter(event)">
+      <div> 
         <button id="letterA">A</button>
         <button id="letterB">B</button>
         <button id="letterC">C</button>
@@ -727,21 +772,24 @@
         <button id="letterR">R</button>
         <button id="letterS">S</button>
       </div>
-     
       <div>
-      <button id="letterT">T</button>
-      <button id="letterU">U</button>
-      <button id="letterV">V</button>
-      <button id="letterW">W</button>
-      <button id="letterX">X</button>
-      <button id="letterY">Y</button>
-      <button id="letterZ">Z</button>
+        <button id="letterT">T</button>
+        <button id="letterU">U</button>
+        <button id="letterV">V</button>
+        <button id="letterW">W</button>
+        <button id="letterX">X</button>
+        <button id="letterY">Y</button>
+        <button id="letterZ">Z</button>
       </div>
       
-      </div>
+    </div>
+  </div>
     
-    
+  </div>
 
+  
+  
+    
     <script>
       // Array containing the words to be guessed
       const categories = [
@@ -759,19 +807,7 @@
         "steen",
         "mountainbike",
       ];
-      // "In de middeleeuwen hadden we dit dier vaak nodig"
-      // "Het is een huisdier waar je mee kunt gaan wandelen"
-      // "Het is een eigenwijs huisdier"
-      // "Dit dier klimpt in de bomen"
-      // "Een lange korte vrucht"
-      // "Een grote waterige vrucht"
-      // "Kleine groene haarige vrucht"
-      // "Het plafond wordt ondersteunt door ...."
-      // "Iedereen heeft er twee van"
-      // "Er zit glas in"
-      // "Je opent het om ergens naar binnen te gaan"
-      // "Ze liggen in een beek"
-      // "Men kan er op fietsen"
+     
 
       // Empty array for the wrong letters.
 
@@ -801,11 +837,11 @@
       switch (antwoord) {
         case "paard":
           document.getElementById("hint").innerHTML =
-            "In de middeleeuwen hadden we dit dier vaak nodig";
+            "In de middeleeuwen hadden we<br> dit dier vaak nodig";
           break;
         case "hond":
           document.getElementById("hint").innerHTML =
-            "Het is een huisdier waar je mee kunt gaan wandelen";
+            "Het is een huisdier waar je<br> mee kunt gaan wandelen";
           break;
         case "kat":
           document.getElementById("hint").innerHTML =
@@ -840,7 +876,7 @@
           break;
         case "deur":
           document.getElementById("hint").innerHTML =
-            "Je opent het om ergens naar binnen te gaan";
+            "Je opent het om ergens<br> naar binnen te gaan";
           break;
         case "steen":
           document.getElementById("hint").innerHTML = "Ze liggen in een beek";
@@ -995,11 +1031,11 @@
           switch (antwoord) {
             case "paard":
               document.getElementById("hint").innerHTML =
-                "In de middeleeuwen hadden we dit dier vaak nodig";
+                "In de middeleeuwen hadden we<br> dit dier vaak nodig";
               break;
             case "hond":
               document.getElementById("hint").innerHTML =
-                "Het is een huisdier waar je mee kunt gaan wandelen";
+                "Het is een huisdier waar je<br> mee kunt gaan wandelen";
               break;
             case "kat":
               document.getElementById("hint").innerHTML =
@@ -1034,7 +1070,7 @@
               break;
             case "deur":
               document.getElementById("hint").innerHTML =
-                "Je opent het om ergens naar binnen te gaan";
+                "Je opent het om ergens<br> naar binnen te gaan";
               break;
             case "steen":
               document.getElementById("hint").innerHTML =
