@@ -353,6 +353,17 @@
         min-width: 1014px;
         
       }
+
+      #ifWon, #ifLost, #ifNext {
+        text-align: center;
+        margin-left: 800px;
+        background-color: lightblue;
+        color: seagreen;
+        width: 800px;
+        height: 520px;
+       
+       
+      }
   
      #lives {
         margin-left: 110px;
@@ -877,7 +888,7 @@
           break;
         case "muur":
           document.getElementById("hint").innerHTML =
-            "Het plafond wordt ondersteunt door ....";
+            "Het plafond wordt ondersteunt<br> door ....";
           break;
         case "ogen":
           document.getElementById("hint").innerHTML =
